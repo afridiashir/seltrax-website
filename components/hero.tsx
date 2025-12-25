@@ -65,7 +65,8 @@ export function Hero() {
                     className="relative w-full max-w-5xl aspect-[16/9] rounded-xl border bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden group"
                 >
                     <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/50 text-xl font-medium">
-                        {theme === "dark" ? <img src="/dark.png" alt="Dashboard" className="w-full h-full object-cover" /> : <img src="/light.png" alt="Dashboard" className="w-full h-full object-cover" />}
+                        {theme === "dark" && <img src="/dark.png" alt="Dashboard" className="w-full h-full object-cover" />}
+                        {theme === "light" && <img src="/light.png" alt="Dashboard" className="w-full h-full object-cover" />}
                     </div>
                     {/* Glossy overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
