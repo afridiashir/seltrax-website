@@ -33,7 +33,7 @@ export function Navbar() {
                 : "bg-transparent border border-transparent"
                 }`}
         >
-            <div className="container px-56 flex items-center justify-between">
+            <div className="container px-4 md:px-32 lg:px-64 flex items-center justify-between">
                 <Link href="/" className="font-body font-semibold text-xl flex items-center gap-2">
                     <Zap className="w-6 h-6" color="#2B7FFF" fill="#2B7FFF" /><span>Seltrax</span>
                 </Link>
@@ -41,7 +41,7 @@ export function Navbar() {
                 <div className="flex items-center gap-2">
 
                     <ModeToggle />
-                    <Button className="hidden md:inline-flex rounded-md bg-primary font-medium dark:bg-blue-600 text-white">
+                    <Button className="md:inline-flex rounded-md bg-primary font-medium dark:bg-blue-600 text-white">
                         Join Waitlist
                     </Button>
                 </div>
