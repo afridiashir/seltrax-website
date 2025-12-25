@@ -13,9 +13,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Seltrax -The Faster and Effective Shopify & WooCommerce Alternative",
-  description: "Save 70K PKR, 2x Faster, 5x More Affordable.",
+  description: "Seltrax is a modern e-commerce platform built as a powerful alternative to Shopify & WooCommerce — faster, simpler, and more affordable.",
   icons: {
-    icon: "/Seltrax.png",
+    icon: "/favicon.png",
   },
 };
 
@@ -26,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <link rel="icon" href="/Seltrax.png" sizes="any" />
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-background text-foreground`}
       >
