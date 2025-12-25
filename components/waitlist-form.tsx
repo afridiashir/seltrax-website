@@ -41,7 +41,7 @@ export function WaitlistForm() {
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-background/60 w-full backdrop-blur-sm h-11 focus-visible:ring-primary"
+                className="bg-background/60 w-full backdrop-blur-sm h-11 text-sm md:text-base focus-visible:ring-primary"
                 required
             />
             <Button type="submit" disabled={loading} className="h-11 px-6 font-medium dark:bg-primary">

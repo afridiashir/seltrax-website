@@ -43,7 +43,7 @@ export default function WhySeltrax() {
 
                 {/* Heading */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-semibold">
+                    <h2 className="text-3xl md:text-4xl font-semibold font-chillax">
                         Why Seltrax?
                     </h2>
                     <p className="mt-3 text-muted-foreground max-w-xl mx-auto">

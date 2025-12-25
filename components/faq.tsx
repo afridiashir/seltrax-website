@@ -49,7 +49,7 @@ export function FAQ() {
     return (
         <section className="py-20 md:py-32 bg-secondary/5">
             <div className="container px-4 md:px-6 mx-auto max-w-3xl">
-                <h2 className="text-3xl md:text-5xl font-bold font-heading text-center mb-4">Frequently Asked Questions</h2>
+                <h2 className="text-3xl md:text-5xl font-bold font-chillax text-center mb-4">Frequently Asked Questions</h2>
                 <p className="text-center text-muted-foreground mb-12 font-sans">Everything you need to know about the future of commerce.</p>
 
                 <Accordion type="single" collapsible className="w-full">
