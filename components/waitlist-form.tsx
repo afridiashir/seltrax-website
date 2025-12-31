@@ -5,18 +5,23 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, Check } from "lucide-react"
 import { motion } from "framer-motion"
+import axios from "axios"
 
 export function WaitlistForm() {
     const [email, setEmail] = useState("")
     const [submitted, setSubmitted] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         if (!email) return
         setLoading(true)
         // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1500))
+        const response = await axios.post("/api/waitlist", { email }).then((res) => {
+            setMessage(res.data.message);
+        });
+        console.log(response)
         setLoading(false)
         setSubmitted(true)
     }
@@ -29,7 +34,8 @@ export function WaitlistForm() {
                 className="flex items-center gap-2 p-4 text-green-500 bg-green-500/10 rounded-lg border border-green-500/20"
             >
                 <Check className="w-5 h-5 flex-shrink-0" />
-                <span className="font-medium">You're on the list! We'll be in touch soon.</span>
+                <span className="font-medium">{message}
+                </span>
             </motion.div>
         )
     }
