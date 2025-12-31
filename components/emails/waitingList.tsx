@@ -1,40 +1,50 @@
-export function EmailTemplate({ name = "there" }) {
+export function EmailTemplate({ name = "there", line = 0 }) {
     return (
         <div style={{ fontFamily: "Arial, sans-serif", maxWidth: 600 }}>
             <p>Hi {name},</p>
 
             <p>
-                My name is Asher - I'm the founder and CEO of Seltrax.
+                I'm Asher, founder of Seltrax.
             </p>
 
             <p>
-                We're building this for people who wanted to save time and money on their e-commerce stores.
+                You recently joined our waitlist — thank you for signing up.
             </p>
 
             <p>
-                A simple, fast and affordable platform to manage your e-commerce stores.
-            </p>
-
-            <p>Here's the things will get early access users</p>
-
-            <ol>
-                <li>We will setup your store for free</li>
-                <li>12 month of free support</li>
-                <li>1 month of free seltrax</li>
-            </ol>
-
-            <p>
-                <b>Quick question — what made you sign up?</b>
+                <strong>Good news:</strong> you're currently <strong>#{line} in line</strong> for early access.
             </p>
 
             <p>
-                Hit 'reply' and let me know! I read and reply to every email.
+                Seltrax is being built to help e-commerce store owners save time and reduce operational costs — without complexity.
             </p>
 
             <p>
-                Cheers,
-                <br />
-                Asher
+                Early access members will receive:
+            </p>
+
+            <ul>
+                <li>Complimentary store setup</li>
+                <li>Priority support during launch</li>
+                <li>Early access to Seltrax features</li>
+            </ul>
+
+            <p>
+                <strong>Quick question:</strong> what problem are you hoping Seltrax will solve for you?
+            </p>
+
+            <p>
+                Just hit reply — I personally read every response.
+            </p>
+
+            <p>
+                Best regards,<br />
+                Asher<br />
+                Founder, Seltrax
+            </p>
+
+            <p style={{ fontSize: 12, color: "#777" }}>
+                You're receiving this email because you signed up for Seltrax updates.
             </p>
         </div>
     );
