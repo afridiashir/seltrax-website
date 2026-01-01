@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { Resend } from 'resend';
 import { EmailTemplate } from "@/components/emails/waitingList";
+import { AlreadyWaitlistTemplate } from "@/components/emails/AlreadyWaitlist";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -33,8 +34,8 @@ export async function POST(request: Request) {
         const { data, error } = await resend.emails.send({
             from: 'Seltrax <hello@seltrax.com>',
             to: [email],
-            subject: "You're on the waitlist! - Seltrax",
-            react: EmailTemplate({ name: "there", line: user.id }),
+            subject: "You're already on the waitlist! - Seltrax",
+            react: AlreadyWaitlistTemplate({ name: "there", line: user.id }),
         });
 
         if (error) {
