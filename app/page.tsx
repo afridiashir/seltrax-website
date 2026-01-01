@@ -5,11 +5,13 @@ import { Footer } from "@/components/footer";
 import WhySeltrax from "@/components/problem";
 import WaitlistSection from "@/components/waiting-section";
 import ComparisonSection from "@/components/compare";
+import Authority from "@/components/authority";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Hero />
+      <Authority />
       <WhySeltrax />
       <ComparisonSection />
       <FAQ />

@@ -3,7 +3,7 @@ export default function WaitlistSection() {
     return (
         <div className="py-10 text-center mb-10  bg-secondary/5">
             <p className="text-muted-foreground mb-4">
-                Join the Waitlist
+                Switch to a Faster, Affordable Shopify & WooCommerce Alternative
             </p>
 
             {/* Subheadline */}

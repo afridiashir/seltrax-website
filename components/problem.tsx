@@ -6,13 +6,13 @@ export default function WhySeltrax() {
     const reas = [
         {
             icon: <Zap className="h-6 w-6 text-primary mt-1" />,
-            title: "Blazing-Fast Performance",
-            description: "Built for speed from day one, so your store loads instantly without any technical setup."
+            title: "Fast eCommerce Platform",
+            description: "Seltrax is built on a modern tech stack optimized for speed, ensuring instant page loads and smooth browsing experiences."
         },
         {
             icon: <CreditCard className="h-6 w-6 text-primary mt-1" />,
             title: "Affordable Pricing",
-            description: "Start from 1499/month with no hidden fees. Zero theme charges and much more."
+            description: "Start your online store from $5/month — no paid themes, no app subscriptions, no hidden fees."
         },
         {
             icon: <LayoutDashboard className="h-6 w-6 text-primary mt-1" />,
@@ -27,12 +27,12 @@ export default function WhySeltrax() {
         {
             icon: <Puzzle className="h-6 w-6 text-primary mt-1" />,
             title: "Only the Plugins You Need",
-            description: "Built-in features replace plugin overload, keeping your store fast and simple."
+            description: "Payments, checkout, analytics, performance optimization — all built in."
         },
         {
             icon: <ShoppingCart className="h-6 w-6 text-primary mt-1" />,
             title: "Optimized Checkout",
-            description: "A smooth, conversion-focused checkout designed to help you sell more."
+            description: "A fast and simple checkout designed to increase completed orders."
         }
     ];
 
@@ -44,7 +44,7 @@ export default function WhySeltrax() {
                 {/* Heading */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-semibold font-chillax">
-                        Why Seltrax?
+                        Why Seltrax Is Better?
                     </h2>
                     <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
                         Everything you need to sell online — without complexity.

@@ -8,7 +8,7 @@ export default function ComparisonSection() {
                 {/* Heading */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-5xl font-semibold font-chillax">
-                        Seltrax vs Other Platforms
+                        Compare Seltrax with Other Platforms
                     </h2>
                     <p className="mt-3 text-muted-foreground">
                         See how Seltrax compares with Shopify and WooCommerce
@@ -21,7 +21,7 @@ export default function ComparisonSection() {
                     {/* Seltrax vs Shopify */}
                     <div className="border rounded-xl p-6">
                         <h3 className="text-3xl font-semibold mb-10">
-                            Better than Shopify
+                            Seltrax vs Shopify
                         </h3>
 
                         <ul className="space-y-5">
@@ -29,7 +29,7 @@ export default function ComparisonSection() {
                                 <DollarSign className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Save up to <strong>₨70,000+</strong> every year and reinvest that money into marketing to grow faster.
+                                    Lower monthly cost than Shopify
                                 </span>
                             </li>
 
@@ -37,7 +37,7 @@ export default function ComparisonSection() {
                                 <ChartNoAxesCombined className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Simple yet powerful analytics that help you track sales and make smarter, data-driven decisions.
+                                    Simple analytics focused on sales
                                 </span>
                             </li>
 
@@ -45,7 +45,7 @@ export default function ComparisonSection() {
                                 <Blocks className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Revenue-focused built-in features and extensions — no messy app ecosystem.
+                                    No paid apps or themes
                                 </span>
                             </li>
 
@@ -53,7 +53,7 @@ export default function ComparisonSection() {
                                 <Zap className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Built on a modern tech stack for blazing-fast performance, so customers never wait.
+                                    Faster page speed
                                 </span>
                             </li>
 
@@ -61,7 +61,7 @@ export default function ComparisonSection() {
                                 <SlidersHorizontal className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Designed for sellers, not developers — anyone can run a store without technical hurdles.
+                                    Designed for sellers, not developers
                                 </span>
                             </li>
 
@@ -69,7 +69,7 @@ export default function ComparisonSection() {
                                 <ShieldCheck className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Secure, fully managed platform so you can focus on selling, not maintenance.
+                                    Fully managed hosting & security
                                 </span>
                             </li>
                         </ul>
@@ -79,7 +79,7 @@ export default function ComparisonSection() {
                     {/* Seltrax vs WooCommerce */}
                     <div className="border rounded-xl p-6">
                         <h3 className="text-3xl font-semibold mb-10">
-                            Better than WooCommerce
+                            Seltrax vs WooCommerce
                         </h3>
 
                         <ul className="space-y-4">
@@ -87,7 +87,7 @@ export default function ComparisonSection() {
                                 <LaptopMinimalCheck className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Launch your store in minutes — no manual setup or technical work.
+                                    No technical and manual setup required
                                 </span>
                             </li>
 
@@ -95,7 +95,7 @@ export default function ComparisonSection() {
                                 <SquareActivity className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Fully managed platform — hosting, speed, and uptime handled by Seltrax.
+                                    Fully managed platform — hosting, speed, and uptime
                                 </span>
                             </li>
 
@@ -103,7 +103,7 @@ export default function ComparisonSection() {
                                 <Blocks className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Built-in features without plugin overload or compatibility issues.
+                                    No plugins or compatibility issues
                                 </span>
                             </li>
 
@@ -111,7 +111,7 @@ export default function ComparisonSection() {
                                 <Zap className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Faster performance with automatic image optimization and caching.
+                                    Faster performance out of the box
                                 </span>
                             </li>
 
@@ -119,7 +119,7 @@ export default function ComparisonSection() {
                                 <Wrench className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Zero maintenance — updates, security, and backups are managed for you.
+                                    Automatic updates and backups
                                 </span>
                             </li>
 
@@ -127,7 +127,7 @@ export default function ComparisonSection() {
                                 <Lock className="w-6 h-6" />
                             </div>
                                 <span className="text-muted-foreground">
-                                    Enterprise-grade security with end-to-end encryption with seltrax.
+                                    Zero technical maintenance
                                 </span>
                             </li>
                         </ul>
