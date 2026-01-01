@@ -18,13 +18,7 @@ export async function POST(request: Request) {
         });
 
         if (checkUser) {
-            const { data, error } = await resend.emails.send({
-                from: 'Seltrax <hello@seltrax.com>',
-                to: [email],
-                subject: "You're on the waitlist! - Seltrax",
-                react: EmailTemplate({ name: "there", line: checkUser.id }),
-            });
-            return NextResponse.json({ message: `You are #${checkUser.id} in line! Refer people to move up.` }, { status: 200 });
+            return NextResponse.json({ message: `You are already on the #${checkUser.id} in line! Refer people to move up.` }, { status: 200 });
         }
         const user = await prisma.user.create({
             data: {
@@ -34,8 +28,8 @@ export async function POST(request: Request) {
         const { data, error } = await resend.emails.send({
             from: 'Seltrax <hello@seltrax.com>',
             to: [email],
-            subject: "You're already on the waitlist! - Seltrax",
-            react: AlreadyWaitlistTemplate({ name: "there", line: user.id }),
+            subject: "You're on the waitlist! - Seltrax",
+            react: EmailTemplate({ name: "there", line: user.id }),
         });
 
         if (error) {
