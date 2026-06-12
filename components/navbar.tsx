@@ -3,13 +3,14 @@
 import * as React from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Menu, Zap } from "lucide-react"
+import { ArrowRight, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ModeToggle } from "./mode-toggle"
+import { LOGIN_URL, REGISTER_URL } from "@/lib/config"
 
 const links = [
     { name: "Features", href: "#features" },
+    { name: "Compare", href: "#compare" },
     { name: "FAQ", href: "#faq" },
 ]
 
@@ -28,26 +29,41 @@ export function Navbar() {
         <motion.nav
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className={`fixed top-0   left-0 right-0 z-50 flex items-center justify-center p-4 md:p-4  flex items-center justify-between w-full h-[60px] px-6 py-3 transition-all duration-300 rounded-md ${isScrolled
-                ? "bg-background/80 backdrop-blur-sm border-b "
-                : "bg-transparent border border-transparent"
+            className={`fixed inset-x-0 top-0 z-50 h-[60px] transition-all duration-300 ${isScrolled
+                ? "bg-background/80 backdrop-blur-md border-b border-border"
+                : "bg-transparent border-b border-transparent"
                 }`}
         >
-            <div className="container px-0 md:px-32 lg:px-64 flex items-center justify-between">
-                <Link href="/" className="font-body font-semibold text-xl flex items-center gap-2">
-                    <Zap className="w-6 h-6" color="#2B7FFF" fill="#2B7FFF" /><span>Seltrax</span>
+            <div className="container mx-auto flex h-full max-w-6xl items-center justify-between px-5 md:px-12">
+                <Link href="/" className="font-heading flex items-center gap-2 text-xl font-semibold">
+                    <Zap className="h-6 w-6" color="#2B7FFF" fill="#2B7FFF" />
+                    <span>Seltrax</span>
                 </Link>
 
-                <div className="flex items-center gap-2">
-
-                    <ModeToggle />
-                    <Button className="md:inline-flex rounded-md bg-primary font-medium dark:bg-blue-600 text-white">
-                        Join Waitlist
-                    </Button>
+                <div className="hidden items-center gap-8 md:flex">
+                    {links.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
                 </div>
 
+                <div className="flex items-center gap-2">
+                    <ModeToggle />
+                    <Button asChild variant="outline" className="hidden rounded-md font-medium sm:inline-flex">
+                        <Link href={LOGIN_URL}>Login</Link>
+                    </Button>
+                    <Button asChild className="rounded-md bg-primary font-medium text-white">
+                        <Link href={REGISTER_URL}>
+                            Start selling <ArrowRight className="ml-1 h-4 w-4" />
+                        </Link>
+                    </Button>
+                </div>
             </div>
-
         </motion.nav>
     )
 }

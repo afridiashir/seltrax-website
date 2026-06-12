@@ -1,21 +1,22 @@
-import { Hero } from "@/components/hero";
-import { Stats } from "@/components/stats";
-import { FAQ } from "@/components/faq";
+import { Hero } from "@/components/landing/hero";
+import { StatsStrip } from "@/components/landing/stats-strip";
+import { Features } from "@/components/landing/features";
+import { Comparison } from "@/components/landing/comparison";
+import { Steps } from "@/components/landing/steps";
+import { FAQ } from "@/components/landing/faq";
+import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/footer";
-import WhySeltrax from "@/components/problem";
-import WaitlistSection from "@/components/waiting-section";
-import ComparisonSection from "@/components/compare";
-import Authority from "@/components/authority";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Hero />
-      <Authority />
-      <WhySeltrax />
-      <ComparisonSection />
+      <StatsStrip />
+      <Features />
+      <Steps />
+      <Comparison />
       <FAQ />
-      <WaitlistSection />
+      <CTA />
       <Footer />
     </main>
   );

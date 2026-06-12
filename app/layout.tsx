@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Space_Grotesk, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-space-grotesk",
+});
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Seltrax -The Faster and Effective Shopify & WooCommerce Alternative",
-  description: "Seltrax is a modern e-commerce platform built as a powerful alternative to Shopify & WooCommerce — faster, simpler, and more affordable.",
+  title: "Seltrax — Launch Your Online Store in Minutes | Shopify & WooCommerce Alternative",
+  description: "Build your online store with Seltrax for a flat Rs 1,349/month. Themes, payments, analytics, and hosting built in — no plugins, no code, no surprise fees.",
   icons: {
     icon: "/favicon.png",
   },
@@ -44,11 +47,11 @@ export default function RootLayout({
       </head>
       <link rel="icon" href="/Seltrax.png" sizes="any" />
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
