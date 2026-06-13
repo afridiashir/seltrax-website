@@ -66,7 +66,7 @@ export function Hero() {
                             </Link>
                         </Button>
                         <Button asChild size="lg" variant="outline" className="h-12 rounded-md px-8 text-base font-medium">
-                            <Link href="#compare">See how it compares</Link>
+                            <Link href="https://calendar.app.google/gBGzD46JoktRZFa78" target="_blank" rel="noopener noreferrer">Book a Demo</Link>
                         </Button>
                     </motion.div>
 

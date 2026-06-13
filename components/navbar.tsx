@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "./mode-toggle"
-import { LOGIN_URL, REGISTER_URL } from "@/lib/config"
+import { REGISTER_URL } from "@/lib/config"
 
 const links = [
     { name: "Features", href: "#features" },
@@ -55,7 +55,7 @@ export function Navbar() {
                 <div className="flex items-center gap-2">
                     <ModeToggle />
                     <Button asChild variant="outline" className="hidden rounded-md font-medium sm:inline-flex">
-                        <Link href={LOGIN_URL}>Login</Link>
+                        <Link href="https://calendar.app.google/gBGzD46JoktRZFa78" target="_blank" rel="noopener noreferrer">Book a Demo</Link>
                     </Button>
                     <Button asChild className="rounded-md bg-primary font-medium text-white">
                         <Link href={REGISTER_URL}>
