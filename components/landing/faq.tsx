@@ -46,6 +46,19 @@ const faqs = [
     },
 ]
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+}
+
 export function FAQ() {
     return (
         <Section
@@ -54,6 +67,10 @@ export function FAQ() {
             title="Questions, answered"
             description="Everything you need to know before you launch."
         >
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="mx-auto max-w-3xl">
                 <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -97,9 +98,13 @@ export function Hero() {
                                         admin.seltrax.com
                                     </span>
                                 </div>
-                                <img
+                                <Image
                                     src={resolvedTheme === "dark" ? "/dark-dashboard.png" : "/light-dashboard.png"}
-                                    alt="Seltrax dashboard"
+                                    alt="Seltrax store admin dashboard showing themes, payments, and analytics"
+                                    width={1600}
+                                    height={900}
+                                    priority
+                                    sizes="(max-width: 768px) 100vw, 1024px"
                                     className="aspect-[16/9] w-full object-cover"
                                 />
                             </div>
