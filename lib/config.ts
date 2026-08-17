@@ -5,3 +5,7 @@ export const LOGIN_URL =
     process.env.NEXT_PUBLIC_LOGIN_URL ?? `${APP_URL}/login`;
 export const REGISTER_URL =
     process.env.NEXT_PUBLIC_REGISTER_URL ?? `${APP_URL}/register`;
+
+// Platform health report proxied by /api/health and rendered on /health.
+export const HEALTH_URL =
+    process.env.HEALTH_URL ?? "https://api.seltrax.com/health/all";
