@@ -26,13 +26,13 @@ export function Hero() {
                         transition={{ duration: 0.5 }}
                         className=" inline-flex items-center"
                     >
-                        <div className="w-[250px] h-[250px] pl-6" style={{
+                        <div className="w-[220px] h-[220px] pl-6" style={{
                             background: "url('/paper_icon.png')",
                             backgroundRepeat: "no-repeat",
                             backgroundPosition: "center",
                             backgroundSize: "contain"
                         }}>
-                            <h2 className="mt-14 ml-2 rotate-[-7.77deg] text-left text-black font-heading font-semibold text-lg">Launch your store <br className="hidden md:block" />today,
+                            <h2 className="mt-14 ml-1 rotate-[-7.77deg] text-left text-black font-heading font-semibold text-base">Launch your store <br className="hidden md:block" />today,
                                 <span className="text-[#686868]"> not next <br className="hidden md:block" />month.</span></h2>
                         </div>
                     </motion.image>

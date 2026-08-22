@@ -1,5 +1,5 @@
 import { Hero } from "@/components/landing/hero";
-import { StatsStrip } from "@/components/landing/stats-strip";
+import { TrustedBrands } from "@/components/landing/trusted-brands";
 import { Features } from "@/components/landing/features";
 import { Comparison } from "@/components/landing/comparison";
 import { Steps } from "@/components/landing/steps";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Hero />
-      <StatsStrip />
+      <TrustedBrands />
       <Features />
       <Steps />
       <Comparison />
