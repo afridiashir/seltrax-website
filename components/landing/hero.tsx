@@ -19,31 +19,32 @@ export function Hero() {
 
     return (
         <section id="hero-section" className="relative overflow-hidden">
-            {/* Blueprint grid backdrop */}
-            <div className="bg-grid mask-fade-edges absolute inset-0 pointer-events-none" />
-            <div className="absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-primary/[0.07] to-transparent pointer-events-none" />
-
-            <div className="container relative mx-auto max-w-6xl border-x border-border px-5 pt-36 pb-0 md:px-12 md:pt-44">
+            <div className="container relative mx-auto max-w-6xl px-5 pt-24 pb-12 md:px-12 md:pt-28">
                 <div className="flex flex-col items-center text-center">
-                    <motion.p
+                    <motion.image
                         {...fadeUp}
                         transition={{ duration: 0.5 }}
-                        className="eyebrow mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-primary"
+                        className=" inline-flex items-center"
                     >
-                        <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-                        </span>
-                        Seltrax is live
-                    </motion.p>
+                        <div className="w-[250px] h-[250px] pl-6" style={{
+                            background: "url('/paper_icon.png')",
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "center",
+                            backgroundSize: "contain"
+                        }}>
+                            <h2 className="mt-14 ml-2 rotate-[-7.77deg] text-left text-black font-heading font-semibold text-lg">Launch your store <br className="hidden md:block" />today,
+                                <span className="text-[#686868]"> not next <br className="hidden md:block" />month.</span></h2>
+                        </div>
+                    </motion.image>
 
                     <motion.h1
                         {...fadeUp}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="font-heading max-w-4xl text-3xl font-semibold leading-[1.2] tracking-tight md:text-6xl"
+                        className="max-w-4xl -mt-6 text-3xl leading-[1.2] tracking-tight md:text-7xl"
                     >
-                        Launch your store today, <br className="hidden md:block" />
-                        <span className="text-primary">not next month.</span>
+                        Your Commerce Partner,<br className="hidden md:block" />
+                        Engineered for Peak <br className="hidden md:block" />
+                        Performance
                     </motion.h1>
 
                     <motion.p
@@ -51,64 +52,20 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg"
                     >
-                        Seltrax gives you a complete online store — themes, payments,
-                        analytics, and a checkout that converts — for one flat price.
-                        No plugins to install, no developers to hire, no surprise fees.
+                        Launch your eye-catching online store with ease, attract<br className="hidden md:block" /> 
+and convert more customers than ever before.
                     </motion.p>
 
                     <motion.div
                         {...fadeUp}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
+                        className="mt-4 flex flex-col items-center gap-3 sm:flex-row"
                     >
                         <Button asChild size="lg" className="h-12 rounded-md px-8 text-base font-medium">
                             <Link href={REGISTER_URL}>
-                                Create your store <ArrowRight className="ml-1 h-4 w-4" />
+                                Get Started <ArrowRight className="ml-1 h-4 w-4" />
                             </Link>
                         </Button>
-                        <Button asChild size="lg" variant="outline" className="h-12 rounded-md px-8 text-base font-medium">
-                            <Link href="https://calendar.app.google/gBGzD46JoktRZFa78" target="_blank" rel="noopener noreferrer">Book a Demo</Link>
-                        </Button>
-                    </motion.div>
-
-                    <motion.p
-                        {...fadeUp}
-                        transition={{ duration: 0.5, delay: 0.35 }}
-                        className="eyebrow mt-5 text-muted-foreground"
-                    >
-                        Rs 1,349/mo · everything included · no credit card to start
-                    </motion.p>
-
-                    {/* Dashboard in browser-chrome frame */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.45 }}
-                        className="relative mt-16 w-full md:mt-20"
-                    >
-                        <PlusMark className="left-1/2 top-0 hidden md:block" />
-                        <div className="mask-fade-bottom relative mx-auto w-full max-w-5xl">
-                            <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-primary/5">
-                                {/* Window chrome */}
-                                <div className="flex items-center gap-2 border-b border-border bg-muted/50 px-4 py-3">
-                                    <span className="h-3 w-3 rounded-full bg-red-400/70" />
-                                    <span className="h-3 w-3 rounded-full bg-yellow-400/70" />
-                                    <span className="h-3 w-3 rounded-full bg-green-400/70" />
-                                    <span className="eyebrow ml-4 hidden text-muted-foreground/70 md:block">
-                                        admin.seltrax.com
-                                    </span>
-                                </div>
-                                <Image
-                                    src={resolvedTheme === "dark" ? "/dark-dashboard.png" : "/light-dashboard.png"}
-                                    alt="Seltrax store admin dashboard showing themes, payments, and analytics"
-                                    width={1600}
-                                    height={900}
-                                    priority
-                                    sizes="(max-width: 768px) 100vw, 1024px"
-                                    className="aspect-[16/9] w-full object-cover"
-                                />
-                            </div>
-                        </div>
                     </motion.div>
                 </div>
             </div>

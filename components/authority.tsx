@@ -25,7 +25,7 @@ const Authority = () => {
 
                 <div className="w-full lg:w-1/2 space-y-8">
                     <div className="space-y-4">
-                        <h2 className=" font-semibold font-chillax text-4xl md:text-5xl">
+                        <h2 className=" font-semibold font-heading text-4xl md:text-5xl">
                             A Modern eCommerce Platform Built for Performance & Growth
                         </h2>
                         <p className="text-muted-foreground leading-relaxed">

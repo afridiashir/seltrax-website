@@ -1,0 +1,20 @@
+/**
+* Font Family: Neulis Alt — SemiBold only
+* Self-hosted from app/fonts (commercial licence — not served from a CDN).
+*
+* Only the SemiBold cut ships, so the face is declared across the full weight
+* range: every `font-medium` / `font-semibold` / `font-bold` in the app renders
+* in the real SemiBold instead of a synthetically emboldened fake. Headings and
+* eyebrow labels therefore share one weight by design.
+*
+* Adding more cuts later? Drop the .otf in app/fonts and give each its own
+* @font-face with the matching numeric font-weight, then narrow this one to 600.
+*/
+
+@font-face {
+  font-family: 'Neulis Alt';
+  src: url('./fonts/NeulisAlt-SemiBold.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

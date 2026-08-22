@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Geist_Mono } from "next/font/google";
+import { Google_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
+import "./neulis.css";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const spaceGrotesk = Space_Grotesk({
+const googleSans = Google_Sans({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-google-sans",
+  display: "swap",
 });
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-});
+// Headings and eyebrow labels use Neulis Alt, self-hosted from app/fonts.
+// See app/neulis.css.
 
 const siteUrl = "https://seltrax.com";
 const title =
@@ -120,7 +119,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${googleSans.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider
           attribute="class"

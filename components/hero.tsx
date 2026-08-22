@@ -32,7 +32,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="font-chillax text-2xl md:text-4xl lg:text-[52px] font-semibold tracking-[0.02em] leading-[1.4] bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 mb-3 md:mb-6 max-w-5xl"
+                    className="font-heading text-2xl md:text-4xl lg:text-[52px] font-semibold tracking-[0.02em] leading-[1.4] bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 mb-3 md:mb-6 max-w-5xl"
                 >
                     The <span className="text-primary/80 bg-primary/10 px-2 py-1 rounded-sm">Faster & Affordable</span> <br className="hidden md:block" />
                     Shopify & WooCommerce Alternative

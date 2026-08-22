@@ -96,7 +96,7 @@ function StatusPill({ status }: { status: HealthStatus }) {
 function MetaItem({ label, value }: { label: string; value: React.ReactNode }) {
     return (
         <div className="flex flex-col items-center gap-1 px-4 py-6 text-center md:py-8">
-            <dd className="font-mono text-lg font-medium md:text-xl">{value}</dd>
+            <dd className="text-lg font-medium md:text-xl">{value}</dd>
             <dt className="eyebrow text-muted-foreground">{label}</dt>
         </div>
     )
@@ -113,7 +113,7 @@ function CheckRow({ name, check }: { name: string; check: HealthCheck }) {
                 <div className="min-w-0">
                     <p className="text-sm font-medium">{labelFor(name)}</p>
                     {check.message && (
-                        <p className="mt-0.5 break-words font-mono text-xs leading-relaxed text-muted-foreground">
+                        <p className="mt-0.5 break-words text-xs leading-relaxed text-muted-foreground">
                             {check.message}
                         </p>
                     )}
@@ -124,7 +124,7 @@ function CheckRow({ name, check }: { name: string; check: HealthCheck }) {
                 {check.required === false && (
                     <span className="eyebrow hidden text-muted-foreground/60 sm:inline">optional</span>
                 )}
-                {duration && <span className="font-mono text-xs text-muted-foreground/80">{duration}</span>}
+                {duration && <span className="text-xs text-muted-foreground/80">{duration}</span>}
                 <span className={cn("eyebrow", STATUS_META[status].text)}>{STATUS_META[status].label}</span>
             </div>
         </li>
@@ -154,13 +154,13 @@ function ServiceCard({ name, service }: { name: string; service: HealthService }
                             required
                         </span>
                     )}
-                    {duration && <span className="font-mono text-xs text-muted-foreground/80">{duration}</span>}
+                    {duration && <span className="text-xs text-muted-foreground/80">{duration}</span>}
                     <StatusPill status={status} />
                 </div>
             </div>
 
             {service.message && (
-                <p className="break-words border-t border-border bg-muted/40 px-5 py-3 font-mono text-xs leading-relaxed text-muted-foreground">
+                <p className="break-words border-t border-border bg-muted/40 px-5 py-3 text-xs leading-relaxed text-muted-foreground">
                     {service.message}
                 </p>
             )}
@@ -368,7 +368,7 @@ export function StatusBoard() {
                         <div className="rounded-xl border border-red-500/30 bg-red-500/[0.06] p-6 text-center">
                             <XCircle className="mx-auto h-6 w-6 text-red-500" />
                             <p className="mt-3 font-medium">Health report unavailable</p>
-                            <p className="mt-1 font-mono text-xs text-muted-foreground">{error}</p>
+                            <p className="mt-1 text-xs text-muted-foreground">{error}</p>
                             <Button variant="outline" className="mt-5 rounded-md" onClick={load} disabled={refreshing}>
                                 <RefreshCw className={cn("h-4 w-4", refreshing && "animate-spin")} />
                                 Try again

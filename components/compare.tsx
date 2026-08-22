@@ -7,7 +7,7 @@ export default function ComparisonSection() {
 
                 {/* Heading */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-semibold font-chillax">
+                    <h2 className="text-3xl md:text-5xl font-semibold font-heading">
                         Compare Seltrax with Other Platforms
                     </h2>
                     <p className="mt-3 text-muted-foreground">

@@ -1,15 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "./chillax.css";
+@import "./neulis.css";
 
 /* @custom-variant dark (&:is(.dark *));// */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-space-grotesk);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,6 +48,10 @@
 }
 
 :root {
+  /* Google Sans for UI/body, Neulis Alt for headings and mono/eyebrow slots. */
+  --font-body: var(--font-google-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Neulis Alt', var(--font-google-sans), ui-sans-serif, system-ui, sans-serif;
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -127,40 +130,16 @@
   }
 }
 
-.font-chillax {
-  font-family: 'Chillax-Variable', sans-serif;
+
+body {
+  font-family: var(--font-google-sans), sans-serif;
 }
 
-/* ── Blueprint aesthetic utilities ───────────────────────── */
-
-/* Fine line grid (hero backdrops) */
-.bg-grid {
-  background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--border) 70%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--border) 70%, transparent) 1px, transparent 1px);
-  background-size: 44px 44px;
-}
 
 /* Dot matrix (CTA / accent backdrops) */
-.bg-dots {
-  background-image: radial-gradient(circle, color-mix(in oklab, var(--foreground) 18%, transparent) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
 
-/* Fades grid/dots toward the edges */
-.mask-fade-edges {
-  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 40%, transparent 100%);
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 40%, transparent 100%);
-}
-
-.mask-fade-bottom {
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-}
-
-/* Monospace eyebrow label */
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 0.75rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
