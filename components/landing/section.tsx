@@ -40,24 +40,21 @@ export function Section({
     innerClassName,
 }: SectionProps) {
     return (
-        <section id={id} className={cn("relative border-t border-border", className)}>
+        <section id={id} className={cn("relative ", className)}>
             <div
                 className={cn(
-                    "container relative mx-auto max-w-6xl border-x border-border px-5 py-20 md:px-12 md:py-28",
+                    "container relative mx-auto max-w-6xl px-5 py-20 md:px-12 md:py-28",
                     innerClassName
                 )}
             >
-                <PlusMark className="left-0 top-0" />
-                <PlusMark className="right-0 top-0 translate-x-1/2" />
 
                 {(label || title) && (
                     <div className="mb-12 flex flex-col items-center text-center md:mb-16">
-                        {label && (
-                            <p className="eyebrow mb-4 text-primary">[ {label} ]</p>
-                        )}
+                        
                         {title && (
-                            <h2 className="font-heading max-w-2xl text-3xl font-semibold leading-tight md:text-5xl">
-                                {title}
+                            <h2 className=" max-w-2xl text-3xl text-[#686868] leading-tight md:text-5xl">
+                                {title}<br className="block"></br>
+                                <span className="text-black">{label}</span>
                             </h2>
                         )}
                         {description && (

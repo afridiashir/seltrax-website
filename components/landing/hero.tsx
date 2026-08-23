@@ -40,10 +40,10 @@ export function Hero() {
                     <motion.h1
                         {...fadeUp}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="max-w-4xl -mt-6 text-3xl leading-[1.2] tracking-tight md:text-7xl"
+                        className="max-w-4xl mt-2 md:-mt-6 text-3xl leading-[1.2] tracking-tight md:text-7xl"
                     >
-                        Your Commerce Partner,<br className="hidden md:block" />
-                        Engineered for Peak <br className="hidden md:block" />
+                        Your Commerce Partner,<br className="block" />
+                        Engineered for Peak <br className="block" />
                         Performance
                     </motion.h1>
 
