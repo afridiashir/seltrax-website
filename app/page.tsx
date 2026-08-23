@@ -1,5 +1,6 @@
 import { Hero } from "@/components/landing/hero";
 import { TrustedBrands } from "@/components/landing/trusted-brands";
+import { DashboardShowcase } from "@/components/landing/dashboard-showcase";
 import { Features } from "@/components/landing/features";
 import { Comparison } from "@/components/landing/comparison";
 import { Steps } from "@/components/landing/steps";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Hero />
       <TrustedBrands />
+      <DashboardShowcase />
       <Features />
       <Steps />
       <Comparison />
