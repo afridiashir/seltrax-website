@@ -19,28 +19,31 @@ export function Hero() {
 
     return (
         <section id="hero-section" className="relative overflow-hidden">
-            <div className="container relative mx-auto max-w-6xl px-5 pt-24 pb-12 md:px-12 md:pt-28">
+            <div className="container relative mx-auto max-w-6xl px-5 pt-20 pb-10 md:px-12 md:pt-28 md:pb-12">
                 <div className="flex flex-col items-center text-center">
-                    <motion.image
+                    {/* Paper note: the square scales by breakpoint and the caption
+                        is positioned in percentages, so the text keeps its place on
+                        the paper at every size. */}
+                    <motion.div
                         {...fadeUp}
                         transition={{ duration: 0.5 }}
-                        className=" inline-flex items-center"
+                        className="inline-flex items-center"
                     >
-                        <div className="w-[220px] h-[220px] pl-6" style={{
-                            background: "url('/paper_icon.png')",
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            backgroundSize: "contain"
-                        }}>
-                            <h2 className="mt-14 ml-1 rotate-[-7.77deg] text-left text-black font-heading font-semibold text-base">Launch your store <br className="hidden md:block" />today,
-                                <span className="text-[#686868]"> not next <br className="hidden md:block" />month.</span></h2>
+                        <div
+                            className="relative aspect-square w-[160px] bg-contain bg-center bg-no-repeat sm:w-[190px] md:w-[220px]"
+                            style={{ backgroundImage: "url('/paper_icon.png')" }}
+                        >
+                            <h2 className="font-heading absolute left-[13%] top-[25%] w-[74%] rotate-[-7.77deg] text-left text-xs font-semibold leading-snug text-black sm:text-sm md:text-base">
+                                Launch your store <br />today,
+                                <span className="text-[#686868]"> not next <br />month.</span>
+                            </h2>
                         </div>
-                    </motion.image>
+                    </motion.div>
 
                     <motion.h1
                         {...fadeUp}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="max-w-4xl mt-2 md:-mt-6 text-3xl leading-[1.2] tracking-tight md:text-7xl"
+                        className="max-w-4xl mt-2 md:-mt-6 text-2xl leading-[1.2] tracking-tight sm:text-3xl md:text-5xl lg:text-7xl"
                     >
                         Your Commerce Partner,<br className="block" />
                         Engineered for Peak <br className="block" />
@@ -50,7 +53,7 @@ export function Hero() {
                     <motion.p
                         {...fadeUp}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg"
+                        className="mt-5 max-w-2xl text-sm text-muted-foreground sm:text-base md:mt-6 md:text-lg"
                     >
                         Launch your eye-catching online store with ease, attract<br className="hidden md:block" /> 
 and convert more customers than ever before.

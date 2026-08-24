@@ -4,7 +4,11 @@ import { Box } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
 import { Section } from "@/components/landing/section"
 
-const orders = [28, 32, 54]
+const orders = [
+    { id: "0028", courier: "TCS", tracking: "#001232-2321" },
+    { id: "0032", courier: "Leopards", tracking: "#004518-7742" },
+    { id: "0054", courier: "M&P", tracking: "#009874-1130" },
+]
 
 // Grid-level scroll-reveal variants
 const container: Variants = {
@@ -63,17 +67,17 @@ Seltrax ships complete — launch, manage, and grow from one place."
                 {/* Speed card */}
                 <motion.div
                     variants={item}
-                    className="md:col-span-2 min-h-[380px] border rounded-md flex flex-col md:flex-row gap-4"
+                    className="md:col-span-2 min-h-[340px] sm:min-h-[380px] border rounded-md flex flex-col md:flex-row gap-4"
                 >
                     <div className="w-full md:w-1/2 flex flex-col justify-between gap-4 p-4">
                         <div>
                             <motion.p
                                 variants={item}
-                                className="bg-blue-100 text-primary inline-block p-2 text-xs px-6 rounded-full"
+                                className="bg-blue-100 text-primary inline-block p-2 px-4 text-xs rounded-full sm:px-6"
                             >
                                 &ldquo;Seltrax stores loads faster than ever&rdquo;
                             </motion.p>
-                            <motion.h3 variants={item} className="text-2xl mt-2">
+                            <motion.h3 variants={item} className="text-xl mt-2 sm:text-2xl">
                                 Store loads within a blink of eye
                             </motion.h3>
                         </div>
@@ -100,7 +104,7 @@ Seltrax ships complete — launch, manage, and grow from one place."
                 {/* COD First card */}
                 <motion.div
                     variants={item}
-                    className="md:col-span-1 min-h-[380px] border-white rounded-md bg-primary text-white p-4 flex flex-col"
+                    className="md:col-span-1 min-h-[340px] sm:min-h-[380px] border-white rounded-md bg-primary text-white p-4 flex flex-col"
                 >
                     <motion.div
                         className="flex-1 min-h-[220px] sm:min-h-[260px] bg-blue-800 rounded-sm overflow-hidden"
@@ -109,28 +113,31 @@ Seltrax ships complete — launch, manage, and grow from one place."
                         whileInView="show"
                         viewport={{ once: true }}
                     >
-                        {orders.map((i) => (
+                        {orders.map((order) => (
                             <motion.div
-                                key={i}
+                                key={order.id}
                                 variants={orderRow}
-                                className="w-full flex items-center gap-2 p-2"
+                                className="w-full flex items-start gap-2 p-2"
                             >
-                                <div className="w-8 h-8 shrink-0 bg-white/30 text-gray-300 rounded-full flex items-center justify-center">
+                                <div className="w-7 h-7 shrink-0 bg-white/30 text-white/70 rounded-full flex items-center justify-center sm:w-8 sm:h-8">
                                     <Box className="w-4 h-4" />
                                 </div>
-                                <div className="bg-white/30 rounded-md p-2 min-w-0">
-                                    <p className="text-white text-sm font-semibold truncate">
-                                        Order-00{i}
+                                {/* the bubble fills the row and the message wraps —
+                                    truncating it in a card this narrow left nothing */}
+                                <div className="min-w-0 flex-1 bg-white/30 rounded-md p-2">
+                                    <p className="text-white text-sm font-semibold">
+                                        Order-{order.id}
                                     </p>
-                                    <p className="text-gray-300 text-xs truncate">
-                                        Order dispatched through TCS, track id #001232-2321
+                                    <p className="text-white/70 text-xs leading-snug">
+                                        Dispatched via {order.courier} &middot; track{" "}
+                                        {order.tracking}
                                     </p>
                                 </div>
                             </motion.div>
                         ))}
                     </motion.div>
-                    <h2 className="text-2xl mt-3">COD First</h2>
-                    <p className="text-white/80">
+                    <h2 className="text-xl mt-3 sm:text-2xl">COD First</h2>
+                    <p className="text-sm text-white/80 sm:text-base">
                         99.9% of Pakistan is doing cash on delivery so track your store
                         around that.
                     </p>
@@ -139,7 +146,7 @@ Seltrax ships complete — launch, manage, and grow from one place."
                 {/* Staff Accounts card */}
                 <motion.div
                     variants={item}
-                    className="md:col-span-1 min-h-[380px] border-white rounded-md bg-primary text-white p-4 flex flex-col"
+                    className="md:col-span-1 min-h-[340px] sm:min-h-[380px] border-white rounded-md bg-primary text-white p-4 flex flex-col"
                 >
                     <div className="flex-1 min-h-[220px] sm:min-h-[260px] bg-blue-800 rounded-sm overflow-hidden">
                         <img
@@ -148,8 +155,8 @@ Seltrax ships complete — launch, manage, and grow from one place."
                             className="object-cover w-full h-full"
                         />
                     </div>
-                    <h2 className="text-2xl mt-3">Staff Accounts</h2>
-                    <p className="text-white/80">
+                    <h2 className="text-xl mt-3 sm:text-2xl">Staff Accounts</h2>
+                    <p className="text-sm text-white/80 sm:text-base">
                         Add your team with the right permissions, so everyone can do
                         their job without sharing one login.
                     </p>
@@ -158,11 +165,11 @@ Seltrax ships complete — launch, manage, and grow from one place."
                 {/* Checkout card */}
                 <motion.div
                     variants={item}
-                    className="md:col-span-2 min-h-[380px] border rounded-md flex flex-col"
+                    className="md:col-span-2 min-h-[340px] sm:min-h-[380px] border rounded-md flex flex-col"
                 >
                     <div className="pt-4 px-4">
-                        <h2 className="text-2xl">Best Converting Checkout</h2>
-                        <p className="text-gray-600">
+                        <h2 className="text-xl sm:text-2xl">Best Converting Checkout</h2>
+                        <p className="text-sm text-gray-600 sm:text-base">
                             Offer a seamless shopping experience optimised for checkouts
                             and reduce abandonment rates.
                         </p>

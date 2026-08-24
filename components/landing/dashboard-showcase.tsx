@@ -47,7 +47,7 @@ export function DashboardShowcase() {
             {/* the track runs wider than the viewport, so the outer two panels
                 spill past both edges and get clipped by the section */}
             <motion.div
-                className="relative left-1/2 flex w-[170%] -translate-x-1/2 items-start gap-4 md:w-[140%] md:gap-8"
+                className="relative left-1/2 flex w-[185%] -translate-x-1/2 items-start gap-2 sm:w-[170%] sm:gap-4 md:w-[140%] md:gap-8"
                 variants={container}
                 initial="hidden"
                 whileInView="show"
@@ -70,7 +70,7 @@ export function DashboardShowcase() {
                             width={1920}
                             height={1080}
                             sizes="(min-width: 768px) 46vw, 56vw"
-                            className="h-auto w-full rounded-md border border-border object-cover shadow-xl md:rounded-xl"
+                            className="h-auto w-full rounded-sm border border-border object-cover shadow-lg sm:rounded-md sm:shadow-xl md:rounded-xl"
                         />
                     </motion.div>
                 ))}

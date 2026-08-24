@@ -43,22 +43,22 @@ export function Section({
         <section id={id} className={cn("relative ", className)}>
             <div
                 className={cn(
-                    "container relative mx-auto max-w-6xl px-5 py-20 md:px-12 md:py-28",
+                    "container relative mx-auto max-w-6xl px-5 py-16 md:px-12 md:py-28",
                     innerClassName
                 )}
             >
 
                 {(label || title) && (
-                    <div className="mb-12 flex flex-col items-center text-center md:mb-16">
+                    <div className="mb-10 flex flex-col items-center text-center md:mb-16">
                         
                         {title && (
-                            <h2 className=" max-w-2xl text-3xl text-[#686868] leading-tight md:text-5xl">
+                            <h2 className="max-w-2xl text-2xl text-[#686868] leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
                                 {title}<br className="block"></br>
                                 <span className="text-black">{label}</span>
                             </h2>
                         )}
                         {description && (
-                            <p className="mt-4 max-w-xl text-muted-foreground md:text-lg">
+                            <p className="mt-4 max-w-xl text-sm text-muted-foreground sm:text-base md:text-lg">
                                 {description}
                             </p>
                         )}

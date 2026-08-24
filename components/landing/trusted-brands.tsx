@@ -19,10 +19,10 @@ const row = Array.from(
 export function TrustedBrands() {
     return (
         <section className="relative">
-            <div className="container relative mx-auto max-w-6xl pt-20">
-                <h2 className="text-center font-medium text-lg">Trusted Brands working with us</h2>
+            <div className="container relative mx-auto max-w-6xl px-5 pt-14 md:px-12 md:pt-20">
+                <h2 className="text-center font-medium text-base sm:text-lg">Trusted Brands working with us</h2>
 
-                <div className="marquee relative mt-10 overflow-hidden">
+                <div className="marquee relative mt-8 overflow-hidden md:mt-10">
                     {/* two identical halves; the track shifts -50% for a seamless loop */}
                     <div
                         className="animate-marquee flex w-max items-center"
@@ -37,14 +37,14 @@ export function TrustedBrands() {
                                 {row.map((brand, i) => (
                                     <div
                                         key={`${half}-${i}`}
-                                        className="flex shrink-0 items-center justify-center px-8 md:px-12"
+                                        className="flex shrink-0 items-center justify-center px-6 sm:px-8 md:px-12"
                                     >
                                         <Image
                                             src={brand.src}
                                             alt={brand.alt}
                                             width={brand.width}
                                             height={brand.height}
-                                            className="h-24 w-auto  grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:h-12"
+                                            className="h-8 w-auto grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-10 md:h-12"
                                         />
                                     </div>
                                 ))}
@@ -53,8 +53,8 @@ export function TrustedBrands() {
                     </div>
 
                     {/* edge fades — solid at the rim, fully transparent by the centre */}
-                    <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-background to-transparent md:w-40" />
-                    <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-background to-transparent md:w-40" />
+                    <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-20 md:w-40" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent sm:w-20 md:w-40" />
                 </div>
  
             </div>
