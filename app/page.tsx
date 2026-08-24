@@ -7,6 +7,7 @@ import { Steps } from "@/components/landing/steps";
 import { FAQ } from "@/components/landing/faq";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/footer";
+import Designs from "@/components/landing/designs";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustedBrands />
       <DashboardShowcase />
       <Features />
+      {/* <Designs /> */}
       <Steps />
       <Comparison />
       <FAQ />
