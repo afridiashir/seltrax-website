@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Google_Sans } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 import "./neulis.css";
@@ -97,7 +96,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-LD6SF4KEX4"
@@ -121,15 +120,8 @@ export default function RootLayout({
       <body
         className={`${googleSans.variable} antialiased bg-background text-foreground`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-        </ThemeProvider>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

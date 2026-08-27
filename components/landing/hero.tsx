@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { PlusMark } from "@/components/landing/section"
 import { REGISTER_URL } from "@/lib/config"
@@ -15,8 +14,6 @@ const fadeUp = {
 }
 
 export function Hero() {
-    const { resolvedTheme } = useTheme()
-
     return (
         <section id="hero-section" className="relative overflow-hidden">
             <div className="container relative mx-auto max-w-6xl px-5 pt-20 pb-10 md:px-12 md:pt-28 md:pb-12">

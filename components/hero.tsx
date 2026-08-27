@@ -5,10 +5,8 @@ import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
 import Aurora from "./aurora"
-import { useTheme } from "next-themes"
 
 export function Hero() {
-    const { theme, setTheme } = useTheme();
     return (
         <section id="hero-section" className="relative overflow-hidden pb-16 pt-36 md:pb-24 bg-gradient-to-b from-primary/10 to-background/10">
 
@@ -22,7 +20,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-flex items-center justify-center w-[300px] rounded-full border dark:border-white/10 border-gray-300 bg-white/5 px-3 py-1 text-sm font-medium backdrop-blur-3xl mb-8 text-center"
+                    className="inline-flex items-center justify-center w-[300px] rounded-full border border-gray-300 bg-white/5 px-3 py-1 text-sm font-medium backdrop-blur-3xl mb-8 text-center"
                 >
                     <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
                     <span className="text-muted-foreground">Launching February 2026</span>
@@ -65,8 +63,7 @@ export function Hero() {
                     className="relative w-full max-w-5xl aspect-[16/9] rounded-xl border bg-white/5 backdrop-blur-2xl shadow-2xl overflow-hidden group"
                 >
                     <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/50 text-xl font-medium">
-                        {theme === "dark" && <img src="/dark-dashboard.png" alt="Dashboard" className="w-full h-full object-cover" />}
-                        {theme === "light" && <img src="/light-dashboard.png" alt="Dashboard" className="w-full h-full object-cover" />}
+                        <img src="/light-dashboard.png" alt="Dashboard" className="w-full h-full object-cover" />
                     </div>
                     {/* Glossy overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />

@@ -5,7 +5,6 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ModeToggle } from "./mode-toggle"
 import { REGISTER_URL } from "@/lib/config"
 
 const links = [
@@ -53,7 +52,6 @@ export function Navbar() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                    <ModeToggle />
                     <Button asChild variant="outline" className="hidden rounded-md font-medium sm:inline-flex">
                         <Link href="https://calendar.app.google/gBGzD46JoktRZFa78" target="_blank" rel="noopener noreferrer">Book a Demo</Link>
                     </Button>

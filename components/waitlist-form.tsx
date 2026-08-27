@@ -50,7 +50,7 @@ export function WaitlistForm() {
                 className="bg-background/60 w-full backdrop-blur-sm h-11 text-sm md:text-base focus-visible:ring-primary"
                 required
             />
-            <Button type="submit" disabled={loading} className="h-11 px-6 font-medium dark:bg-primary">
+            <Button type="submit" disabled={loading} className="h-11 px-6 font-medium">
                 {loading ? (
                     "Joining..."
                 ) : (
