@@ -62,7 +62,7 @@ export const NAV: NavItem[] = [
                 label: "Manage",
                 blurb: "Run the business from the dashboard — or your phone.",
                 links: [
-                    { title: "Analytics", desc: "Sales, sessions, conversion and best-sellers at a glance.", href: "/#features", icon: BarChart3 },
+                    { title: "Analytics", desc: "Sales, conversion, delivered rate and returns by city and courier.", href: "/analytics", icon: BarChart3 },
                     { title: "Staff accounts", desc: "Give your team the right permissions, no shared logins.", href: "/#features", icon: Users },
                     { title: "Mobile app", desc: "Live sales and orders wherever you are.", href: "/mobile-app", icon: Smartphone },
                 ],
