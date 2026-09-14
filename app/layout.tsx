@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { MotionProvider } from "@/components/motion-provider";
+import { TopLoader } from "@/components/top-loader";
 import "./globals.css";
 import Script from "next/script";
 
@@ -124,6 +125,7 @@ export default function RootLayout({
         className={`${homeSans.variable} ${homeSerif.variable} antialiased bg-background text-foreground`}
       >
         {/* The homepage carries its own header inside the hero card (components/home/navbar.tsx). */}
+        <TopLoader />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

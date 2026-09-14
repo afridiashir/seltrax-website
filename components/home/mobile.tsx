@@ -19,15 +19,6 @@ export function Mobile() {
                         <Chip icon={<BarChart3 className="h-3 w-3" />} label="Live sales, sessions & conversion" />
                         <Chip icon={<Package className="h-3 w-3" />} label="Orders and dispatch, anywhere" />
                     </div>
-                    <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-                        <AndroidButton />
-                        <Link
-                            href="/mobile-app"
-                            className="inline-flex items-center gap-1 rounded-full border border-[#D9DCD3] px-4 py-2 text-[12px] font-medium transition-colors hover:bg-[#F3F4F0] lg:text-[13px]"
-                        >
-                            About the app <ArrowUpRight className="h-3.5 w-3.5" />
-                        </Link>
-                    </div>
                 </Reveal>
             </Container>
 
@@ -95,6 +86,17 @@ export function Mobile() {
                         </div>
                     </div>
                 </div>
+            </Reveal>
+
+            {/* Download / about buttons sit below the phone showcase. */}
+            <Reveal delay={0.15} className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:mt-8">
+                <AndroidButton />
+                <Link
+                    href="/mobile-app"
+                    className="inline-flex items-center gap-1 rounded-full border border-[#D9DCD3] px-4 py-2 text-[12px] font-medium transition-colors hover:bg-[#F3F4F0] lg:text-[13px]"
+                >
+                    About the app <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
             </Reveal>
             </Container>
         </section>

@@ -76,7 +76,7 @@ export function Testimonial() {
 
     return (
         <Container>
-            <section id="reviews" className="scroll-mt-4 border-t border-[#EEF0EA] py-16 lg:py-24">
+            <section id="reviews" className="scroll-mt-4 py-16 lg:py-24">
                 <Reveal>
                     <h2 className={h2Class}>
                         <Serif className="block">What our</Serif>
