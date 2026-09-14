@@ -45,7 +45,7 @@ export const NAV: NavItem[] = [
                     { title: "Designs", desc: "Ready-made store designs by category — watches, fragrances, clothing and more.", href: "/designs", icon: Palette },
                     { title: "Mobile-first storefronts", desc: "360px-first layouts, a load budget and a one-thumb COD checkout.", href: "/mobile-first", icon: Smartphone },
                     { title: "Page speed", desc: "One JSON-rendered theme, zero plugins — about 2x faster than Shopify.", href: "/page-speed", icon: Gauge },
-                    { title: "Homepage builder", desc: "Arrange sections visually and publish in a click.", href: "/#how-it-works", icon: LayoutTemplate },
+                    { title: "Page builder", desc: "Build any page, stack sections in any order, change every setting — no theme required.", href: "/page-builder", icon: LayoutTemplate },
                 ],
             },
             {
