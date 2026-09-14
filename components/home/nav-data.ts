@@ -6,6 +6,7 @@ import {
     CalendarCheck,
     CircleHelp,
     Gauge,
+    HeartHandshake,
     LayoutTemplate,
     LifeBuoy,
     LogIn,
@@ -87,10 +88,10 @@ export const NAV: NavItem[] = [
                 label: "About Seltrax",
                 blurb: "Why we built a commerce platform for Pakistani sellers.",
                 links: [
-                    { title: "Why Seltrax", desc: "One flat price, nothing to bolt on, built for COD.", href: "/#features", icon: Building2 },
+                    { title: "About us", desc: "Who we are and why we built Seltrax for Pakistani sellers.", href: "/about", icon: Building2 },
+                    { title: "Our team", desc: "The people building and supporting Seltrax.", href: "/about#team", icon: HeartHandshake },
                     { title: "Compare", desc: "How we stack up against Shopify and WooCommerce.", href: "/#faq", icon: Scale },
                     { title: "Sellers on Seltrax", desc: "What store owners say after switching.", href: "/#reviews", icon: Users },
-                    { title: "Platform status", desc: "Live uptime and incident history.", href: "/health", icon: Activity },
                 ],
             },
             {
