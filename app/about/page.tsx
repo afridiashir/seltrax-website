@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AboutCTA, AboutHero, Mission, Story, Team, Values } from "@/components/about/sections";
+import { AboutCTA, AboutHero, Mission, Story, Values } from "@/components/about/sections";
 import { CTAFooter } from "@/components/home/cta-footer";
 
 export const metadata: Metadata = {
@@ -16,7 +16,6 @@ export default function AboutPage() {
       <Story />
       <Mission />
       <Values />
-      <Team />
       <AboutCTA />
       <CTAFooter />
     </main>

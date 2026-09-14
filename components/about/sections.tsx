@@ -66,9 +66,9 @@ export function AboutHero() {
                         <a href="#story" className="inline-flex items-center gap-1 rounded-full bg-[#171717] px-5 py-2.5 text-[12px] font-medium text-white transition-colors hover:bg-black lg:text-[14px]">
                             Our story
                         </a>
-                        <a href="#team" className="inline-flex items-center gap-1 rounded-full bg-white/70 px-4 py-2.5 text-[12px] font-medium backdrop-blur transition-colors hover:bg-white lg:px-5 lg:text-[14px]">
-                            Meet the team
-                        </a>
+                        <Link href={REGISTER_URL} className="inline-flex items-center gap-1 rounded-full bg-white/70 px-4 py-2.5 text-[12px] font-medium backdrop-blur transition-colors hover:bg-white lg:px-5 lg:text-[14px]">
+                            Start selling <ArrowUpRight className="h-3.5 w-3.5" />
+                        </Link>
                     </motion.div>
                 </Container>
             </div>

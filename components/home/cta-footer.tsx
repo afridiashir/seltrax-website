@@ -31,8 +31,8 @@ const columns = [
     {
         title: "Compare",
         links: [
-            { name: "Seltrax vs Shopify", href: "/#faq" },
-            { name: "Seltrax vs WooCommerce", href: "/#faq" },
+            { name: "Seltrax vs Shopify", href: "/compare#shopify" },
+            { name: "Seltrax vs WooCommerce", href: "/compare#woocommerce" },
         ],
     },
 ]
