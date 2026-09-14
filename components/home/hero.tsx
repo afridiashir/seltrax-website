@@ -302,7 +302,7 @@ function SpeedCard() {
                                 </motion.span>
                             ))}
                         </span>
-                        <span className="text-[13px] font-semibold">No shared logins</span>
+                        <span className="text-[11px]">No shared logins</span>
                     </div>
                 </Layer>
             </div>

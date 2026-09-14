@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Google_Sans, Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
-import "./neulis.css";
 import Script from "next/script";
 
-const googleSans = Google_Sans({
-  subsets: ["latin"],
-  variable: "--font-google-sans",
-  display: "swap",
-});
-// The homepage (components/home) pairs Inter with Instrument Serif italic.
+// Inter for UI/body, Instrument Serif italic for display accents (see globals.css).
 const homeSans = Inter({
   subsets: ["latin"],
   variable: "--font-home-sans",
@@ -23,9 +17,6 @@ const homeSerif = Instrument_Serif({
   variable: "--font-home-serif",
   display: "swap",
 });
-// Headings and eyebrow labels use Neulis Alt, self-hosted from app/fonts.
-// See app/neulis.css.
-
 const siteUrl = "https://seltrax.com";
 const title =
   "Seltrax — Launch Your Online Store in Minutes | Shopify & WooCommerce Alternative";
@@ -130,7 +121,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${googleSans.variable} ${homeSans.variable} ${homeSerif.variable} antialiased bg-background text-foreground`}
+        className={`${homeSans.variable} ${homeSerif.variable} antialiased bg-background text-foreground`}
       >
         {/* The homepage carries its own header inside the hero card (components/home/navbar.tsx). */}
         <MotionProvider>{children}</MotionProvider>

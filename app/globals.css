@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "./neulis.css";
 
 @theme inline {
   --color-background: var(--background);
@@ -46,9 +44,9 @@
 }
 
 :root {
-  /* Google Sans for UI/body, Neulis Alt for headings and mono/eyebrow slots. */
-  --font-body: var(--font-google-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Neulis Alt', var(--font-google-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Inter for UI/body, Instrument Serif for display accents (loaded in app/layout.tsx). */
+  --font-body: var(--font-home-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-home-serif), Georgia, serif;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -94,60 +92,6 @@
   }
 }
 
-
 body {
-  font-family: var(--font-google-sans), sans-serif;
-}
-
-
-/* Dot matrix (CTA / accent backdrops). Set --dot-color to retint per section. */
-.bg-dots {
-  background-image: radial-gradient(var(--dot-color, rgb(0 0 0 / 0.12)) 1px, transparent 1px);
-  background-size: 16px 16px;
-}
-
-/* fades a backdrop out towards the edges so it never meets a hard border */
-.mask-fade-edges {
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 72%);
-  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 72%);
-}
-
-.eyebrow {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-/* Logo marquee: track holds two identical halves, so -50% loops seamlessly */
-@keyframes marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-.animate-marquee,
-.animate-marquee-reverse {
-  animation: marquee var(--marquee-duration, 40s) linear infinite;
-  will-change: transform;
-}
-
-/* same track, walked the other way — used to alternate row directions */
-.animate-marquee-reverse {
-  animation-direction: reverse;
-}
-
-/* hover-pause is opt-in: only tracks inside a .marquee parent stop */
-.marquee:hover .animate-marquee {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
-  .animate-marquee-reverse {
-    animation: none;
-  }
+  font-family: var(--font-body);
 }

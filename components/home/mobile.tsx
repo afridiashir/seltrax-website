@@ -27,7 +27,7 @@ export function Mobile() {
                     <div className="absolute inset-0 bg-white/10" />
 
                     {/* Phone showing the Seltrax admin dashboard */}
-                    <div className="absolute left-1/2 top-[8%] w-[160px] -translate-x-1/2 overflow-hidden rounded-[26px] border-[5px] border-[#171717] bg-[#F5F6F8] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)] sm:w-[190px] sm:rounded-[32px] sm:border-[6px] lg:w-[240px]">
+                    <div className="absolute left-1/2 top-[6%] w-[220px] max-w-[64%] -translate-x-1/2 overflow-hidden rounded-[30px] border-[6px] border-[#171717] bg-[#F5F6F8] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)] sm:top-[8%] sm:w-[190px] sm:max-w-none sm:rounded-[32px] lg:w-[240px]">
                         <div className="absolute left-1/2 top-1.5 z-10 h-3 w-14 -translate-x-1/2 rounded-full bg-[#171717]" />
                         <div className="relative aspect-[9/17.5] w-full">
                             <Image
