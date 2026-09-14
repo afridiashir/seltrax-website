@@ -6,6 +6,10 @@ export const LOGIN_URL =
 export const REGISTER_URL =
     process.env.NEXT_PUBLIC_REGISTER_URL ?? `${APP_URL}/register`;
 
+// Android app download (APK or Play Store listing). Until NEXT_PUBLIC_ANDROID_APP_URL
+// is set, download buttons render as "coming soon" instead of linking nowhere.
+export const ANDROID_APP_URL = process.env.NEXT_PUBLIC_ANDROID_APP_URL ?? "";
+
 // Platform health report proxied by /api/health and rendered on /health.
 export const HEALTH_URL =
     process.env.HEALTH_URL ?? "https://api.seltrax.com/health/all";

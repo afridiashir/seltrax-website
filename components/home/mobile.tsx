@@ -1,7 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowDownLeft, BarChart3, Package } from "lucide-react"
+import Link from "next/link"
+import { ArrowDownLeft, ArrowUpRight, BarChart3, Package } from "lucide-react"
+import { AndroidButton } from "@/components/mobile-app/android-button"
 import { ACCENT, Container, Face, Flag, Reveal, Serif, h2Class, shadow } from "./ui"
 
 export function Mobile() {
@@ -16,6 +18,15 @@ export function Mobile() {
                     <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
                         <Chip icon={<BarChart3 className="h-3 w-3" />} label="Live sales, sessions & conversion" />
                         <Chip icon={<Package className="h-3 w-3" />} label="Orders and dispatch, anywhere" />
+                    </div>
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+                        <AndroidButton />
+                        <Link
+                            href="/mobile-app"
+                            className="inline-flex items-center gap-1 rounded-full border border-[#D9DCD3] px-4 py-2 text-[12px] font-medium transition-colors hover:bg-[#F3F4F0] lg:text-[13px]"
+                        >
+                            About the app <ArrowUpRight className="h-3.5 w-3.5" />
+                        </Link>
                     </div>
                 </Reveal>
             </Container>

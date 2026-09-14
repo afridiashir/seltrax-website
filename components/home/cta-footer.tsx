@@ -12,9 +12,10 @@ const columns = [
     {
         title: "Product",
         links: [
-            { name: "Features", href: "#features" },
-            { name: "How it works", href: "#how-it-works" },
-            { name: "FAQ", href: "#faq" },
+            { name: "Features", href: "/#features" },
+            { name: "How it works", href: "/#how-it-works" },
+            { name: "Mobile app", href: "/mobile-app" },
+            { name: "FAQ", href: "/#faq" },
             { name: "Status", href: "/health" },
         ],
     },
@@ -29,8 +30,8 @@ const columns = [
     {
         title: "Compare",
         links: [
-            { name: "Seltrax vs Shopify", href: "#faq" },
-            { name: "Seltrax vs WooCommerce", href: "#faq" },
+            { name: "Seltrax vs Shopify", href: "/#faq" },
+            { name: "Seltrax vs WooCommerce", href: "/#faq" },
         ],
     },
 ]
