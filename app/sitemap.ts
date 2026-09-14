@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { integrations } from "@/components/integrations/data";
 
 const siteUrl = "https://seltrax.com";
 
@@ -14,6 +15,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/designs`,
       lastModified: new Date(),
       changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/integrations`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...integrations.map((i) => ({
+      url: `${siteUrl}/integrations/${i.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${siteUrl}/launch`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
