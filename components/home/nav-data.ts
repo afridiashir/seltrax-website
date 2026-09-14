@@ -52,7 +52,7 @@ export const NAV: NavItem[] = [
                 label: "Selling",
                 blurb: "Built for how Pakistan buys — cash on delivery first.",
                 links: [
-                    { title: "Cash on Delivery", desc: "COD orders, collection and reconciliation built in.", href: "/#features", icon: Banknote },
+                    { title: "Cash on Delivery", desc: "Confirmation, courier booking, tracking, returns and remittance — built in.", href: "/cash-on-delivery", icon: Banknote },
                     { title: "Courier dispatch", desc: "TCS, Leopards and M&P dispatch with tracking numbers.", href: "/#features", icon: Truck },
                     { title: "Checkout", desc: "A checkout optimised to reduce abandoned carts.", href: "/#features", icon: ShieldCheck },
                     { title: "Orders", desc: "Every order, its status and tracking in one dashboard.", href: "/#features", icon: Package },
