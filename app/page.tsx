@@ -1,27 +1,24 @@
-import { Hero } from "@/components/landing/hero";
-import { TrustedBrands } from "@/components/landing/trusted-brands";
-import { DashboardShowcase } from "@/components/landing/dashboard-showcase";
-import { Features } from "@/components/landing/features";
-import { Comparison } from "@/components/landing/comparison";
-import { Steps } from "@/components/landing/steps";
-import { FAQ } from "@/components/landing/faq";
-import { CTA } from "@/components/landing/cta";
-import { Footer } from "@/components/footer";
-import Designs from "@/components/landing/designs";
+import { Hero } from "@/components/home/hero";
+import { BuiltIn } from "@/components/home/built-in";
+import { Steps } from "@/components/home/steps";
+import { Mobile } from "@/components/home/mobile";
+import { Testimonial } from "@/components/home/testimonial";
+import { FAQ } from "@/components/home/faq";
+import { CTAFooter } from "@/components/home/cta-footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main
+      className="min-h-screen bg-white text-[#171717]"
+      style={{ fontFamily: "var(--font-home-sans), ui-sans-serif, system-ui, sans-serif" }}
+    >
       <Hero />
-      <TrustedBrands />
-      <DashboardShowcase />
-      <Features />
-      {/* <Designs /> */}
+      <BuiltIn />
       <Steps />
-      <Comparison />
+      <Mobile />
+      <Testimonial />
       <FAQ />
-      <CTA />
-      <Footer />
+      <CTAFooter />
     </main>
   );
 }

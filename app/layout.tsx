@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Google_Sans } from "next/font/google";
-import { Navbar } from "@/components/navbar";
+import { Google_Sans, Inter, Instrument_Serif } from "next/font/google";
+import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 import "./neulis.css";
 import Script from "next/script";
@@ -8,6 +8,19 @@ import Script from "next/script";
 const googleSans = Google_Sans({
   subsets: ["latin"],
   variable: "--font-google-sans",
+  display: "swap",
+});
+// The homepage (components/home) pairs Inter with Instrument Serif italic.
+const homeSans = Inter({
+  subsets: ["latin"],
+  variable: "--font-home-sans",
+  display: "swap",
+});
+const homeSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-home-serif",
   display: "swap",
 });
 // Headings and eyebrow labels use Neulis Alt, self-hosted from app/fonts.
@@ -36,10 +49,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  icons: {
-    icon: "/favicon.png",
-    apple: "/Seltrax.png",
-  },
+  // Icons come from the file conventions app/icon.png and app/apple-icon.png.
+  // Don't add an `icons` field here: Next drops file-based icons whenever
+  // metadata.icons is set (see lib/metadata/resolve-metadata.js).
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -118,10 +130,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${googleSans.variable} antialiased bg-background text-foreground`}
+        className={`${googleSans.variable} ${homeSans.variable} ${homeSerif.variable} antialiased bg-background text-foreground`}
       >
-        <Navbar />
-        {children}
+        {/* The homepage carries its own header inside the hero card (components/home/navbar.tsx). */}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

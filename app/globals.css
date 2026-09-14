@@ -100,7 +100,17 @@ body {
 }
 
 
-/* Dot matrix (CTA / accent backdrops) */
+/* Dot matrix (CTA / accent backdrops). Set --dot-color to retint per section. */
+.bg-dots {
+  background-image: radial-gradient(var(--dot-color, rgb(0 0 0 / 0.12)) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* fades a backdrop out towards the edges so it never meets a hard border */
+.mask-fade-edges {
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 72%);
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 72%);
+}
 
 .eyebrow {
   font-family: var(--font-display);
@@ -119,17 +129,25 @@ body {
   }
 }
 
-.animate-marquee {
+.animate-marquee,
+.animate-marquee-reverse {
   animation: marquee var(--marquee-duration, 40s) linear infinite;
   will-change: transform;
 }
 
+/* same track, walked the other way — used to alternate row directions */
+.animate-marquee-reverse {
+  animation-direction: reverse;
+}
+
+/* hover-pause is opt-in: only tracks inside a .marquee parent stop */
 .marquee:hover .animate-marquee {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-marquee-reverse {
     animation: none;
   }
 }
