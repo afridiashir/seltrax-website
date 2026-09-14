@@ -64,7 +64,9 @@ export function BuiltIn() {
                     ))}
                 </div>
 
-                <Reveal className="mt-14 grid grid-cols-1 divide-y divide-[#DFE2D9] sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:mt-20">
+                <Reveal className="relative mt-14 grid grid-cols-1 divide-y divide-[#DFE2D9] sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:mt-20">
+                    {/* Anchor for the "Pricing" nav link. */}
+                    <span id="pricing" className="sr-only scroll-mt-24">Pricing</span>
                     {stats.map((s) => (
                         <div key={s.label} className="py-6 text-center sm:py-2">
                             <Serif className="block text-[46px] leading-none tracking-[-0.02em] sm:text-[52px] lg:text-[64px]">{s.value}</Serif>
