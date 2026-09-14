@@ -13,6 +13,7 @@ const columns = [
         title: "Product",
         links: [
             { name: "Features", href: "/#features" },
+            { name: "Designs", href: "/designs" },
             { name: "How it works", href: "/#how-it-works" },
             { name: "Mobile app", href: "/mobile-app" },
             { name: "FAQ", href: "/#faq" },

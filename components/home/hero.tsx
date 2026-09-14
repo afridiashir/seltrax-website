@@ -32,7 +32,7 @@ export function Hero() {
         <>
             {/* Full-bleed photo: fog wash at the top for the nav and headline, fading to
                 solid white at the bottom so the page flows straight out of it. */}
-            <section className="relative overflow-hidden">
+            <section className="relative">
                 <Image
                     src="/landing/scenery.jpg"
                     alt=""

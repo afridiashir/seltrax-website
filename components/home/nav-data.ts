@@ -42,8 +42,8 @@ export const NAV: NavItem[] = [
                 label: "Storefront",
                 blurb: "Themes, speed and a store that works on every screen.",
                 links: [
-                    { title: "Themes", desc: "Pick a theme, add your logo and colours — no code.", href: "/#how-it-works", icon: Palette },
-                    { title: "Mobile-first storefronts", desc: "Responsive by default and fast on mobile data.", href: "/#features", icon: Smartphone },
+                    { title: "Designs", desc: "Ready-made store designs by category — watches, fragrances, clothing and more.", href: "/designs", icon: Palette },
+                    { title: "Mobile-first storefronts", desc: "360px-first layouts, a load budget and a one-thumb COD checkout.", href: "/mobile-first", icon: Smartphone },
                     { title: "Page speed", desc: "No plugin bloat, so your store stays fast as you grow.", href: "/#features", icon: Gauge },
                     { title: "Homepage builder", desc: "Arrange sections visually and publish in a click.", href: "/#how-it-works", icon: LayoutTemplate },
                 ],

@@ -21,7 +21,7 @@ const float = (delay: number) => ({
 
 export function AppHero() {
     return (
-        <section className="relative overflow-hidden">
+        <section className="relative">
             <Image src="/landing/bluish.jpg" alt="" fill priority sizes="100vw" className="object-cover object-[center_40%]" />
             <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/70 to-transparent" />
             <div

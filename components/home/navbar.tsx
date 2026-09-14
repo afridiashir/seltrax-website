@@ -39,7 +39,7 @@ export function HomeNavbar() {
     const active = NAV.find((n) => n.label === open && n.kind !== "link") as Exclude<NavItem, { kind: "link" }> | undefined
 
     return (
-        <header className="relative z-40" onMouseLeave={scheduleClose} onMouseEnter={cancelClose}>
+        <header className="relative z-50" onMouseLeave={scheduleClose} onMouseEnter={cancelClose}>
             <div className="flex h-14 items-center justify-between px-4 sm:px-6 lg:h-16 lg:px-12">
                 <Link href="/" aria-label="Seltrax home" onClick={() => setOpen(null)}>
                     <Logo />
