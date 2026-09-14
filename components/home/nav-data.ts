@@ -55,7 +55,7 @@ export const NAV: NavItem[] = [
                     { title: "Cash on Delivery", desc: "Confirmation, courier booking, tracking, returns and remittance — built in.", href: "/cash-on-delivery", icon: Banknote },
                     { title: "Courier dispatch", desc: "Book TCS, Leopards and M&P from the order, labels, pickup and tracking.", href: "/courier-dispatch", icon: Truck },
                     { title: "Checkout", desc: "One page, phone-first — require, make optional or hide any field.", href: "/checkout", icon: ShieldCheck },
-                    { title: "Orders", desc: "Every order, its status and tracking in one dashboard.", href: "/#features", icon: Package },
+                    { title: "Orders", desc: "One inbox in COD stages — bulk actions, customer history, automation.", href: "/orders", icon: Package },
                 ],
             },
             {
