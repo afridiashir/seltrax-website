@@ -115,5 +115,5 @@ export const NAV: NavItem[] = [
             { title: "Platform status", desc: "Live uptime and incident history.", href: "/health", icon: Activity, external: true },
         ],
     },
-    { label: "Pricing", kind: "link", href: "/#pricing" },
+    { label: "Pricing", kind: "link", href: "/pricing" },
 ]
