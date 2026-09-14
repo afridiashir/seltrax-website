@@ -17,7 +17,7 @@ const columns = [
             { name: "How it works", href: "/#how-it-works" },
             { name: "Mobile app", href: "/mobile-app" },
             { name: "FAQ", href: "/#faq" },
-            { name: "Status", href: "/health" },
+            { name: "Status", href: "/health", external: true },
         ],
     },
     {
@@ -83,7 +83,12 @@ export function CTAFooter() {
                                 <ul className="mt-2.5 space-y-1.5 lg:mt-3 lg:space-y-2">
                                     {c.links.map((l) => (
                                         <li key={l.name}>
-                                            <Link href={l.href} className="text-[9px] text-[#6B6F66] transition-colors hover:text-[#171717] lg:text-[12px]">
+                                            <Link
+                                                href={l.href}
+                                                target={"external" in l && l.external ? "_blank" : undefined}
+                                                rel={"external" in l && l.external ? "noopener noreferrer" : undefined}
+                                                className="text-[9px] text-[#6B6F66] transition-colors hover:text-[#171717] lg:text-[12px]"
+                                            >
                                                 {l.name}
                                             </Link>
                                         </li>
