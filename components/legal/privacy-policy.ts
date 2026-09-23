@@ -8,22 +8,12 @@
      - what the mobile app collects and which permissions it asks for (section 1)
 */
 
-/* Who the policy is served by. privacyEmail must stay a monitored inbox —
-   data-rights requests and deletion requests arrive there. */
-export const COMPANY = {
-    legalEntity: "Seltrax Pvt Ltd",
-    postalAddress: "15 MM Alam Road, Vouge Tower, Gulberg, Lahore, Pakistan",
-    privacyEmail: "privacy@seltrax.com",
-    jurisdiction: "Pakistan",
-} as const
+import type { Block } from "./blocks"
+import { COMPANY } from "./company"
+
+export { COMPANY }
 
 export const LAST_UPDATED = "22 September 2026"
-
-export type Block =
-    | { type: "p"; lead?: string; text: string }
-    | { type: "list"; items: string[] }
-    | { type: "table"; head: string[]; rows: string[][] }
-    | { type: "note"; text: string }
 
 export type Section = { id: string; title: string; body: Block[] }
 

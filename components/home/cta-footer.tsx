@@ -100,9 +100,12 @@ export function CTAFooter() {
 
                     <div className="mt-8 flex flex-col gap-3 border-t border-[#EEF0EA] pt-4 text-[9px] text-[#6B6F66] sm:flex-row sm:items-center sm:justify-between lg:text-[11px]">
                         <p>© {new Date().getFullYear()} Seltrax. All rights reserved.</p>
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-wrap items-center gap-3">
                             <Link href="/privacy" className="transition-colors hover:text-[#171717]">
                                 Privacy
+                            </Link>
+                            <Link href="/delete-account" className="transition-colors hover:text-[#171717]">
+                                Delete account
                             </Link>
                             <span aria-hidden>·</span>
                             <p>Made for sellers in Pakistan 🇵🇰</p>
