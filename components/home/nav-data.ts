@@ -73,7 +73,7 @@ export const NAV: NavItem[] = [
                 blurb: "Move in from elsewhere and connect the tools you use.",
                 links: [
                     { title: "Migrate from Shopify / Woo", desc: "Bring products, customers, orders and SEO across — no downtime.", href: "/migrate", icon: ArrowLeftRight },
-                    { title: "Integrations", desc: "Couriers, Facebook Pixel, Google Analytics, Clarity, WhatsApp and more.", href: "/integrations", icon: PlugZap },
+                    { title: "Integrations", desc: "Couriers, Meta and TikTok pixels, Google Analytics, WhatsApp and more.", href: "/integrations", icon: PlugZap },
                     { title: "Launch in minutes", desc: "No hosting, theme or plugins — sign up, add a product, publish.", href: "/launch", icon: Rocket },
                 ],
             },

@@ -497,7 +497,7 @@ const reports: Detail[] = [
             { k: "Discount codes", v: "Uses and revenue" },
             { k: "Facebook Pixel", v: "Events sent automatically" },
             { k: "Google Analytics", v: "Connected in settings" },
-            { k: "Microsoft Clarity", v: "Session recordings & heatmaps" },
+            { k: "TikTok Pixel", v: "Events sent automatically" },
         ],
     },
 ]
@@ -583,7 +583,7 @@ const sheet = [
     ["Breakdowns", "City · courier · product · variant · source · device"],
     ["Customers", "New vs returning, repeat rate, lifetime value"],
     ["Marketing", "UTM campaigns, discount codes"],
-    ["Integrations", "Facebook Pixel · Google Analytics · Microsoft Clarity"],
+    ["Integrations", "Meta Pixel · TikTok Pixel · Google Analytics"],
     ["Mobile", "Dashboard in the Android app"],
     ["Access", "Per-person: hide revenue from staff"],
     ["Export", "CSV of any report"],
@@ -678,7 +678,7 @@ export function AnalyticsComparison() {
 /* ---- FAQ ------------------------------------------------------------------ */
 
 const faqs = [
-    { q: "Do I still need Google Analytics?", a: "Not for store performance — sales, sessions, conversion, products, couriers and cash are all in Seltrax. If you use GA, Facebook Pixel or Microsoft Clarity for marketing, connect them in settings and they run alongside." },
+    { q: "Do I still need Google Analytics?", a: "Not for store performance — sales, sessions, conversion, products, couriers and cash are all in Seltrax. If you use Google Analytics, the Meta Pixel or the TikTok Pixel for marketing, connect them in Integrations and they run alongside." },
     { q: "Why is my delivered revenue lower than my sales?", a: "Because some COD parcels come back. Sales counts orders placed; delivered revenue counts orders that were handed over and paid for. The gap is your return rate — and the city and courier breakdowns show where it comes from." },
     { q: "Can I hide revenue from my staff?", a: "Yes. Staff permissions let you give someone access to orders without access to analytics or totals." },
     { q: "Can I export the data?", a: "Every report exports to CSV for the date range you've selected." },

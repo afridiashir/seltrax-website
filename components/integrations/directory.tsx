@@ -4,7 +4,7 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowUpRight, LayoutGrid, Megaphone, MessageCircle, PlugZap, Search, ShieldCheck, Truck, BarChart3, Mail } from "lucide-react"
+import { ArrowUpRight, BarChart3, Gift, LayoutGrid, Megaphone, MessageCircle, PlugZap, Search, ShoppingBag, Truck } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { HomeNavbar } from "@/components/home/navbar"
 import { ACCENT, Container, Reveal, Serif } from "@/components/home/ui"
@@ -16,12 +16,12 @@ const ease = [0.22, 1, 0.36, 1] as const
 const ALL = "all"
 const icons: Record<CategoryKey | typeof ALL, React.ElementType> = {
     all: LayoutGrid,
-    marketing: Megaphone,
     analytics: BarChart3,
+    marketing: Megaphone,
+    checkout: ShoppingBag,
+    communication: MessageCircle,
+    merchandising: Gift,
     shipping: Truck,
-    messaging: MessageCircle,
-    email: Mail,
-    trust: ShieldCheck,
 }
 
 /* Selected category lives in the URL hash (/integrations#shipping). */
@@ -76,8 +76,8 @@ export function IntegrationsDirectory() {
                                 <Serif>Connect the tools</Serif> <span className="font-semibold">you already use</span>
                             </h1>
                             <p className="mx-auto mt-4 max-w-[500px] text-[12px] leading-relaxed text-[#3A3D37] lg:text-[15px]">
-                                Couriers, ad pixels, analytics, messaging and email — connected from settings, included on every plan,
-                                and none of them slow your store down.
+                                Couriers, ad pixels, analytics, WhatsApp and one-tap checkout — connected from one page in your admin,
+                                included on every plan, and none of them slow your store down.
                             </p>
                             <label className="mx-auto mt-6 flex max-w-[420px] items-center gap-2 rounded-full bg-white px-4 py-2.5 shadow-sm ring-1 ring-[#E4E6DF]">
                                 <Search className="h-4 w-4 text-[#8A8E84]" />
@@ -133,22 +133,42 @@ export function IntegrationsDirectory() {
 
                                 {shown.length > 0 ? (
                                     <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3 lg:gap-4">
-                                        {shown.map((i) => (
-                                            <li key={i.slug}>
-                                                <Link href={`/integrations/${i.slug}`} className="group flex h-full flex-col rounded-2xl border border-[#E4E6DF] bg-white p-5 transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.25)]">
+                                        {shown.map((i) => {
+                                            /* Coming-soon entries have no page, so they are a card, not a link. */
+                                            const body = (
+                                                <>
                                                     <div className="flex items-start justify-between gap-3">
                                                         <IntegrationLogo item={i} size={48} />
-                                                        <span className="rounded-full bg-[#E6F4EC] px-2 py-0.5 text-[9.5px] font-semibold text-[#0F7A44]">Included</span>
+                                                        {i.comingSoon ? (
+                                                            <span className="rounded-full bg-[#F3F4F0] px-2 py-0.5 text-[9.5px] font-semibold text-[#6B6F66]">Coming soon</span>
+                                                        ) : (
+                                                            <span className="rounded-full bg-[#E6F4EC] px-2 py-0.5 text-[9.5px] font-semibold text-[#0F7A44]">Included</span>
+                                                        )}
                                                     </div>
                                                     <p className="mt-4 text-[14px] font-semibold lg:text-[16px]">{i.name}</p>
                                                     <p className="text-[10px] text-[#8A8E84] lg:text-[11px]">{categoryName(i.category)}</p>
                                                     <p className="mt-2 flex-1 text-[11px] leading-relaxed text-[#6B6F66] lg:text-[13px]">{i.tagline}</p>
-                                                    <span className="mt-4 inline-flex items-center gap-1 text-[11px] font-medium lg:text-[12px]">
-                                                        Learn more <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                                                    </span>
-                                                </Link>
-                                            </li>
-                                        ))}
+                                                    {i.comingSoon ? (
+                                                        <span className="mt-4 text-[11px] text-[#8A8E84] lg:text-[12px]">In development</span>
+                                                    ) : (
+                                                        <span className="mt-4 inline-flex items-center gap-1 text-[11px] font-medium lg:text-[12px]">
+                                                            Learn more <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                                                        </span>
+                                                    )}
+                                                </>
+                                            )
+                                            return (
+                                                <li key={i.slug}>
+                                                    {i.comingSoon ? (
+                                                        <div className="flex h-full flex-col rounded-2xl border border-dashed border-[#D9DCD3] bg-[#FBFCFA] p-5">{body}</div>
+                                                    ) : (
+                                                        <Link href={`/integrations/${i.slug}`} className="group flex h-full flex-col rounded-2xl border border-[#E4E6DF] bg-white p-5 transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.25)]">
+                                                            {body}
+                                                        </Link>
+                                                    )}
+                                                </li>
+                                            )
+                                        })}
                                     </ul>
                                 ) : (
                                     <div className="mt-6 rounded-2xl border border-dashed border-[#D9DCD3] bg-[#F6F7F3] px-6 py-14 text-center">

@@ -246,10 +246,10 @@ export const articles: Article[] = [
     {
         slug: "connect-marketing-tools",
         title: "Connect marketing tools",
-        summary: "Add Facebook Pixel, Google Analytics, Clarity and more.",
+        summary: "Add the Meta Pixel, TikTok Pixel and Google Analytics 4.",
         minutes: 2,
         body: [
-            { type: "steps", items: ["Open Settings → Integrations.", "Choose the tool — for example Facebook Pixel.", "Paste the ID from that tool's dashboard and save.", "Use the tool's own test or real-time view to confirm data arrives."] },
+            { type: "steps", items: ["Open Integrations from the admin menu.", "Click Connect on the tool's card — for example Meta Pixel.", "Paste the ID from that tool's dashboard, leave Active on and save.", "Use the tool's own test or real-time view to confirm data arrives."] },
             { type: "p", text: "Integrations load after your page is usable, so they don't slow your store down." },
         ],
         related: { label: "All integrations", href: "/integrations" },

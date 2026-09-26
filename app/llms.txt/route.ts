@@ -1,5 +1,5 @@
 import { articles as helpArticles } from "@/components/help/docs";
-import { integrations } from "@/components/integrations/data";
+import { livePages as integrationPages } from "@/components/integrations/data";
 import { absolute, sitePages, type PageGroup } from "@/lib/site-pages";
 
 /* /llms.txt — a plain-text index of the site for AI assistants, following the
@@ -66,7 +66,7 @@ function build() {
     out.push("## Integrations");
     out.push("");
     out.push(
-        integrations
+        integrationPages
             .map((i) => line(i.name, absolute(`/integrations/${i.slug}`), i.tagline))
             .join("\n"),
     );

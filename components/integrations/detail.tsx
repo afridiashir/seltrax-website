@@ -2,18 +2,64 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ArrowUpRight, Check, Zap } from "lucide-react"
+import { AlertTriangle, ArrowLeft, ArrowUpRight, Check, Info, Lightbulb, Truck, Zap } from "lucide-react"
 import { REGISTER_URL } from "@/lib/config"
 import { HomeNavbar } from "@/components/home/navbar"
 import { ACCENT, Container, Reveal, Serif, h2Class } from "@/components/home/ui"
-import { bySlug, categoryName, type Integration } from "./data"
+import {
+    bookingAutofill,
+    bookingSteps,
+    bySlug,
+    categoryName,
+    courierLimits,
+    courierNotes,
+    type Integration,
+    type Note,
+} from "./data"
 import { IntegrationLogo } from "./logo"
 
 const DEMO_URL = "https://calendar.app.google/gBGzD46JoktRZFa78"
 
+const NOTE_STYLES = {
+    note: { border: "#CFE0FF", bg: "#F5F9FF", fg: ACCENT, Icon: Info },
+    tip: { border: "#CFE0FF", bg: "#F5F9FF", fg: ACCENT, Icon: Lightbulb },
+    warn: { border: "#F5D9B0", bg: "#FFF8EE", fg: "#B25E09", Icon: AlertTriangle },
+} as const
+
+function Callout({ note }: { note: Note }) {
+    const s = NOTE_STYLES[note.tone]
+    return (
+        <div className="flex gap-3 rounded-xl border p-4" style={{ borderColor: s.border, background: s.bg }}>
+            <s.Icon className="mt-0.5 h-4 w-4 shrink-0" style={{ color: s.fg }} />
+            <p className="text-[12.5px] leading-relaxed text-[#3A3D37] lg:text-[14px]">{note.text}</p>
+        </div>
+    )
+}
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+    return <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8A8E84]">{children}</p>
+}
+
+/* Numbered steps, used for "How to connect" and for the shared courier flow. */
+function Steps({ items }: { items: string[] }) {
+    return (
+        <ol className="relative mt-4">
+            <span className="absolute left-[15px] top-2 h-[calc(100%-1rem)] w-[2px] bg-[#EEF0EA]" />
+            {items.map((s, i) => (
+                <li key={s} className="relative flex gap-4 pb-4 last:pb-0">
+                    <span className="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#171717] text-[12px] font-semibold text-white">{i + 1}</span>
+                    <p className="pt-1.5 text-[12px] leading-relaxed lg:text-[14px]">{s}</p>
+                </li>
+            ))}
+        </ol>
+    )
+}
+
 export function IntegrationDetail({ slug }: { slug: string }) {
     const item = bySlug(slug) as Integration
     const related = item.related.map(bySlug).filter(Boolean) as Integration[]
+    const isCourier = item.category === "shipping"
+    const showWhere = !!item.settings?.some((f) => f.where)
 
     return (
         <>
@@ -79,17 +125,112 @@ export function IntegrationDetail({ slug }: { slug: string }) {
                         </Reveal>
 
                         <Reveal className="mt-10">
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8A8E84]">How to connect</p>
-                            <ol className="relative mt-4">
-                                <span className="absolute left-[15px] top-2 h-[calc(100%-1rem)] w-[2px] bg-[#EEF0EA]" />
-                                {item.setup.map((s, i) => (
-                                    <li key={s} className="relative flex gap-4 pb-4 last:pb-0">
-                                        <span className="relative z-10 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#171717] text-[12px] font-semibold text-white">{i + 1}</span>
-                                        <p className="pt-1.5 text-[12px] leading-relaxed lg:text-[14px]">{s}</p>
-                                    </li>
-                                ))}
-                            </ol>
+                            <SectionLabel>How to connect</SectionLabel>
+                            <p className="mt-2 text-[12px] text-[#6B6F66] lg:text-[13px]">
+                                Admin → Integrations → <span className="font-medium text-[#171717]">Connect</span> on the {item.name} card → fill in the settings → Save.
+                            </p>
+                            <Steps items={item.setup} />
                         </Reveal>
+
+                        {item.settings && item.settings.length > 0 && (
+                            <Reveal className="mt-10">
+                                <SectionLabel>What to fill in</SectionLabel>
+                                <p className="mt-2 text-[12px] text-[#6B6F66] lg:text-[13px]">
+                                    Every field has a short explanation under it in the admin too.
+                                </p>
+                                <div className="mt-4 overflow-x-auto rounded-xl border border-[#E4E6DF]">
+                                    <table className="w-full min-w-[560px] border-collapse text-left">
+                                        <thead>
+                                            <tr className="bg-[#F6F7F3]">
+                                                <th className="px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#5C6058]">Setting</th>
+                                                <th className="px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#5C6058]">What to enter</th>
+                                                {showWhere && (
+                                                    <th className="px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#5C6058]">Where to find it</th>
+                                                )}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {item.settings.map((f) => (
+                                                <tr key={f.name} className="border-t border-[#EEF0EA] align-top">
+                                                    <td className="px-4 py-3 text-[12px] font-medium lg:text-[13px]">
+                                                        {f.name}
+                                                        {f.required && (
+                                                            <span className="ml-1.5 whitespace-nowrap rounded bg-[#FFF1F0] px-1.5 py-0.5 text-[9.5px] font-semibold text-[#B42318]">required</span>
+                                                        )}
+                                                    </td>
+                                                    <td className="px-4 py-3 text-[12px] leading-relaxed text-[#3A3D37] lg:text-[13px]">{f.enter}</td>
+                                                    {showWhere && (
+                                                        <td className="px-4 py-3 text-[12px] leading-relaxed text-[#6B6F66] lg:text-[13px]">{f.where ?? "—"}</td>
+                                                    )}
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </Reveal>
+                        )}
+
+                        {item.code && (
+                            <Reveal className="mt-8">
+                                <SectionLabel>{item.code.caption}</SectionLabel>
+                                <pre dir="ltr" className="mt-3 overflow-x-auto rounded-xl bg-[#171717] p-4 text-[11.5px] leading-relaxed text-[#E9EAE4] lg:text-[12.5px]">
+                                    <code>{item.code.body}</code>
+                                </pre>
+                            </Reveal>
+                        )}
+
+                        {item.notes && item.notes.length > 0 && (
+                            <Reveal className="mt-8">
+                                <div className="space-y-3">
+                                    {item.notes.map((n) => (
+                                        <Callout key={n.text} note={n} />
+                                    ))}
+                                </div>
+                            </Reveal>
+                        )}
+
+                        {isCourier && (
+                            <>
+                                <Reveal className="mt-12">
+                                    <div className="flex items-center gap-2">
+                                        <Truck className="h-4 w-4" style={{ color: ACCENT }} />
+                                        <SectionLabel>How booking works</SectionLabel>
+                                    </div>
+                                    <p className="mt-2 text-[12px] text-[#6B6F66] lg:text-[13px]">
+                                        The same for every courier you connect.
+                                    </p>
+                                    <Steps items={bookingSteps} />
+                                    <div className="mt-2 rounded-2xl border border-[#E4E6DF] bg-[#F6F7F3] p-4 lg:p-5">
+                                        <p className="text-[12px] font-semibold lg:text-[13.5px]">How the form fills itself in</p>
+                                        <dl className="mt-2">
+                                            {bookingAutofill.map((a) => (
+                                                <div key={a.k} className="border-t border-[#E4E6DF] py-2 first:border-t-0">
+                                                    <dt className="text-[11.5px] font-medium lg:text-[12.5px]">{a.k}</dt>
+                                                    <dd className="text-[11.5px] leading-relaxed text-[#6B6F66] lg:text-[12.5px]">{a.v}</dd>
+                                                </div>
+                                            ))}
+                                        </dl>
+                                    </div>
+                                    <div className="mt-3 space-y-3">
+                                        {courierNotes.map((n) => (
+                                            <Callout key={n.text} note={n} />
+                                        ))}
+                                    </div>
+                                </Reveal>
+
+                                <Reveal className="mt-10">
+                                    <SectionLabel>Done by hand, for now</SectionLabel>
+                                    <ul className="mt-3 space-y-2">
+                                        {courierLimits.map((l) => (
+                                            <li key={l} className="flex gap-2.5 text-[12.5px] leading-relaxed text-[#3A3D37] lg:text-[14px]">
+                                                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#B5B9B0]" />
+                                                {l}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </Reveal>
+                            </>
+                        )}
                     </div>
 
                     <aside className="lg:sticky lg:top-6 lg:self-start">

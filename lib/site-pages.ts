@@ -162,7 +162,7 @@ export const sitePages: SitePage[] = [
     {
         path: "/integrations",
         title: "Integrations",
-        summary: "Couriers, Facebook Pixel, Google Analytics, Clarity, WhatsApp and more.",
+        summary: "Courier booking, Meta and TikTok pixels, Google Analytics, WhatsApp checkout and chat, and one-click COD checkout.",
         group: "Grow",
         priority: 0.8,
         changeFrequency: "weekly",

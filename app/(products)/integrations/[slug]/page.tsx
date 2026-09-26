@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { bySlug, integrations } from "@/components/integrations/data";
+import { bySlug, livePages } from "@/components/integrations/data";
 import { IntegrationDetail } from "@/components/integrations/detail";
 import { CTAFooter } from "@/components/home/cta-footer";
 
 type Props = { params: Promise<{ slug: string }> };
 
+// Coming-soon entries have no page, so they are not prerendered and, with
+// dynamicParams off, their slugs 404.
 export function generateStaticParams() {
-  return integrations.map((i) => ({ slug: i.slug }));
+  return livePages.map((i) => ({ slug: i.slug }));
 }
 
 export const dynamicParams = false;

@@ -166,7 +166,7 @@ const included: { icon: React.ElementType; title: string; href: string; items: s
     { icon: ShoppingBag, title: "Orders", href: "/orders", items: ["Order stages built for COD", "Bulk actions", "Customer refusal history", "Remittance tracking"] },
     { icon: BarChart3, title: "Analytics", href: "/analytics", items: ["Sales, sessions & conversion", "Funnel to delivered orders", "Returns by city & courier", "Cash with couriers"] },
     { icon: Users, title: "Team", href: "/staff-accounts", items: ["Unlimited staff accounts", "Roles & permissions", "Activity log", "Android app for everyone"] },
-    { icon: PlugZap, title: "Integrations", href: "/integrations", items: ["Facebook Pixel & Google Analytics", "Microsoft Clarity", "WhatsApp & SMS updates", "Mailchimp"] },
+    { icon: PlugZap, title: "Integrations", href: "/integrations", items: ["Meta, TikTok & Google Analytics", "WhatsApp checkout & chat", "One-click COD checkout", "TCS, Leopards & M&P booking"] },
 ]
 
 export function Included() {
