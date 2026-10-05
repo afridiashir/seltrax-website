@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Template preview screenshots from the Templates API are served from the CDN.
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "cdn.seltrax.com" }],
+  },
   async redirects() {
     return [
       // UptimeRobot refuses to be framed, so /health hands off to the hosted

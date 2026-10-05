@@ -1,6 +1,7 @@
 import { articles as helpArticles } from "@/components/help/docs";
 import { livePages as integrationPages } from "@/components/integrations/data";
 import { absolute, sitePages, type PageGroup } from "@/lib/site-pages";
+import { getTemplates, type PublicTemplate } from "@/lib/templates-api";
 
 /* /llms.txt — a plain-text index of the site for AI assistants, following the
    llms.txt convention: an H1, a blockquote summary, then link lists.
@@ -33,7 +34,7 @@ function line(title: string, url: string, summary: string) {
     return `- [${title}](${url}): ${summary}`;
 }
 
-function build() {
+function build(templates: PublicTemplate[]) {
     const out: string[] = [];
 
     out.push("# Seltrax");
@@ -71,14 +72,26 @@ function build() {
             .join("\n"),
     );
 
+    if (templates.length) {
+        out.push("");
+        out.push("## Store designs");
+        out.push("");
+        out.push(
+            templates
+                .map((t) => line(t.name, absolute(`/designs/${t.slug}`), t.description ?? `${t.category ?? "Ready-made"} store design.`))
+                .join("\n"),
+        );
+    }
+
     out.push("");
     return out.join("\n");
 }
 
 export const dynamic = "force-static";
 
-export function GET() {
-    return new Response(build(), {
+export async function GET() {
+    const { templates } = await getTemplates();
+    return new Response(build(templates), {
         headers: {
             "content-type": "text/plain; charset=utf-8",
             "cache-control": "public, max-age=0, must-revalidate",

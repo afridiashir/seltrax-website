@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DesignsBrowser } from "@/components/designs/browser";
 import { CTAFooter } from "@/components/home/cta-footer";
+import { getTemplates } from "@/lib/templates-api";
 
 export const metadata: Metadata = {
   title: "Store Designs — Seltrax",
@@ -9,10 +10,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/designs" },
 };
 
-export default function DesignsPage() {
+export default async function DesignsPage() {
+  const { templates, categories, failed } = await getTemplates();
   return (
     <main className="min-h-screen bg-white text-[#171717]">
-      <DesignsBrowser />
+      <DesignsBrowser templates={templates} apiCategories={categories} failed={failed} />
       <CTAFooter />
     </main>
   );

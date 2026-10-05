@@ -4,20 +4,20 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowUpRight, Bell, Eye, Rocket } from "lucide-react"
+import { ArrowUpRight, Bell, Eye, ImageOff, Rocket } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { REGISTER_URL } from "@/lib/config"
 import { HomeNavbar } from "@/components/home/navbar"
 import { ACCENT, Container, Reveal, Serif } from "@/components/home/ui"
-import { ALL, allCategory, categories, designsFor, type Category, type Design } from "./data"
+import type { PublicTemplate } from "@/lib/templates-api"
+import { ALL, allCategory, buildCategories, categorySlug, templatesFor, type Category } from "./data"
 
 const DEMO_URL = "https://calendar.app.google/gBGzD46JoktRZFa78"
 const ease = [0.22, 1, 0.36, 1] as const
-const rail: Category[] = [allCategory, ...categories]
 
 /* The selected category lives in the URL hash (/designs#watches) so links can
    deep-link to a category and the back button behaves. */
-function useCategory() {
+function useCategory(rail: Category[]) {
     const [slug, setSlug] = React.useState(ALL)
     React.useEffect(() => {
         const read = () => {
@@ -27,7 +27,7 @@ function useCategory() {
         read()
         window.addEventListener("hashchange", read)
         return () => window.removeEventListener("hashchange", read)
-    }, [])
+    }, [rail])
     const select = (s: string) => {
         setSlug(s)
         history.replaceState(null, "", s === ALL ? window.location.pathname : `#${s}`)
@@ -35,10 +35,13 @@ function useCategory() {
     return [slug, select] as const
 }
 
-export function DesignsBrowser() {
-    const [slug, select] = useCategory()
+type Props = { templates: PublicTemplate[]; apiCategories: string[]; failed: boolean }
+
+export function DesignsBrowser({ templates, apiCategories, failed }: Props) {
+    const rail = React.useMemo(() => [allCategory, ...buildCategories(apiCategories, templates)], [apiCategories, templates])
+    const [slug, select] = useCategory(rail)
     const current = rail.find((c) => c.slug === slug) ?? allCategory
-    const items = designsFor(slug)
+    const items = templatesFor(templates, slug)
 
     return (
         <>
@@ -80,7 +83,7 @@ export function DesignsBrowser() {
                         <ul className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-col md:gap-0.5 md:overflow-visible md:px-0 md:pb-0">
                             {rail.map((c) => {
                                 const on = c.slug === slug
-                                const count = designsFor(c.slug).length
+                                const count = templatesFor(templates, c.slug).length
                                 return (
                                     <li key={c.slug} className="shrink-0">
                                         <button
@@ -120,12 +123,12 @@ export function DesignsBrowser() {
                                     <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
                                         {items.map((d) => (
                                             <li key={d.slug}>
-                                                <DesignCard design={d} />
+                                                <DesignCard design={d} categoryName={rail.find((c) => c.slug === categorySlug(d))?.name} />
                                             </li>
                                         ))}
                                     </ul>
                                 ) : (
-                                    <EmptyState category={current} />
+                                    <EmptyState category={current} failed={failed} />
                                 )}
                             </motion.div>
                         </AnimatePresence>
@@ -136,54 +139,74 @@ export function DesignsBrowser() {
     )
 }
 
-function DesignCard({ design }: { design: Design }) {
-    const cat = categories.find((c) => c.slug === design.category)
+function DesignCard({ design, categoryName }: { design: PublicTemplate; categoryName?: string }) {
+    const image = design.previewImages[0]
+    const included = [
+        design.pages.length > 0 && `${design.pages.length} ${design.pages.length === 1 ? "page" : "pages"}`,
+        design.sampleProductCount > 0 && `${design.sampleProductCount} sample ${design.sampleProductCount === 1 ? "product" : "products"}`,
+    ].filter(Boolean)
     return (
-        <article className="group overflow-hidden rounded-2xl border border-[#E4E6DF] bg-white transition-shadow hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.25)]">
-            <div className="relative aspect-[4/3] overflow-hidden bg-[#F3F4F0]">
-                <Image src={design.image} alt={`${design.name} store design`} fill sizes="(max-width: 640px) 100vw, 400px" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
-            </div>
-            <div className="p-4">
+        <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#E4E6DF] bg-white transition-shadow hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.25)]">
+            {/* Previews are portrait 1920x2480 (24:31); cropping from the top keeps the header and hero. */}
+            <Link href={`/designs/${design.slug}`} aria-label={`${design.name} design details`} className="relative block aspect-[24/31] overflow-hidden bg-[#F3F4F0]">
+                {image ? (
+                    <Image src={image} alt={`${design.name} store design`} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 400px" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" />
+                ) : (
+                    <div className="grid h-full w-full place-items-center text-[#B5B9AD]">
+                        <ImageOff className="h-8 w-8" aria-label="No preview available" />
+                    </div>
+                )}
+            </Link>
+            <div className="flex flex-1 flex-col p-4">
                 <div className="flex items-start justify-between gap-3">
                     <div>
-                        <p className="text-[13px] font-semibold lg:text-[15px]">{design.name}</p>
-                        <p className="text-[10px] text-[#8A8E84] lg:text-[11px]">{cat?.name}</p>
+                        <Link href={`/designs/${design.slug}`} className="text-[13px] font-semibold hover:underline lg:text-[15px]">{design.name}</Link>
+                        {categoryName && <p className="text-[10px] text-[#8A8E84] lg:text-[11px]">{categoryName}</p>}
                     </div>
-                    {design.preview && (
-                        <a href={design.preview} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 rounded-full border border-[#D9DCD3] px-2.5 py-1 text-[10px] font-medium transition-colors hover:bg-[#F3F4F0]">
-                            Preview <ArrowUpRight className="h-3 w-3" />
+                    {design.demoUrl && (
+                        <a href={design.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[#D9DCD3] px-2.5 py-1 text-[10px] font-medium transition-colors hover:bg-[#F3F4F0]">
+                            View demo <ArrowUpRight className="h-3 w-3" />
                         </a>
                     )}
                 </div>
-                {design.tags && design.tags.length > 0 && (
+                {design.description && <p className="mt-2 text-[11px] leading-relaxed text-[#6B6F66] lg:text-[12px]">{design.description}</p>}
+                {design.pages.length > 0 && (
                     <div className="mt-2.5 flex flex-wrap gap-1">
-                        {design.tags.map((t) => (
-                            <span key={t} className="rounded-full bg-[#F3F4F0] px-2 py-0.5 text-[9px] text-[#5C6058] lg:text-[10px]">
-                                {t}
+                        {design.pages.map((p) => (
+                            <span key={p} className="rounded-full bg-[#F3F4F0] px-2 py-0.5 text-[9px] text-[#5C6058] lg:text-[10px]">
+                                {p}
                             </span>
                         ))}
                     </div>
                 )}
-                <Link href={REGISTER_URL} className="mt-3 inline-flex items-center gap-1 rounded-full bg-[#171717] px-3 py-1.5 text-[11px] font-medium text-white transition-colors hover:bg-black">
-                    Use this design <ArrowUpRight className="h-3 w-3" />
-                </Link>
+                {included.length > 0 && <p className="mt-2 text-[10px] text-[#8A8E84] lg:text-[11px]">{included.join(" · ")}</p>}
+                <div className="mt-auto pt-3">
+                    <Link href={REGISTER_URL} className="inline-flex items-center gap-1 rounded-full bg-[#171717] px-3 py-1.5 text-[11px] font-medium text-white transition-colors hover:bg-black">
+                        Use this template <ArrowUpRight className="h-3 w-3" />
+                    </Link>
+                </div>
             </div>
         </article>
     )
 }
 
-function EmptyState({ category }: { category: Category }) {
+function EmptyState({ category, failed }: { category: Category; failed: boolean }) {
     return (
         <div className="mt-6 rounded-2xl border border-dashed border-[#D9DCD3] bg-[#F6F7F3] px-6 py-14 text-center lg:py-20">
             <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-white text-[#171717] shadow-sm">
                 <category.icon className="h-5 w-5" />
             </span>
             <p className="mt-4 text-[15px] font-semibold lg:text-[18px]">
-                {category.slug === ALL ? "Designs are on their way" : `${category.name} designs are on their way`}
+                {failed
+                    ? "Designs couldn't be loaded"
+                    : category.slug === ALL
+                      ? "Designs are on their way"
+                      : `${category.name} designs are on their way`}
             </p>
             <p className="mx-auto mt-2 max-w-[400px] text-[11px] leading-relaxed text-[#6B6F66] lg:text-[13px]">
-                We&apos;re building out ready-made looks for {category.slug === ALL ? "every category" : "this category"}. Until then you can start from a
-                blank store and customise it yourself — most sellers launch the same day.
+                {failed
+                    ? "Something went wrong on our side. Refresh in a minute, or start from a blank store and customise it yourself."
+                    : `We're building out ready-made looks for ${category.slug === ALL ? "every category" : "this category"}. Until then you can start from a blank store and customise it yourself — most sellers launch the same day.`}
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
                 <Link href={REGISTER_URL} className="inline-flex items-center gap-1.5 rounded-full bg-[#171717] px-4 py-2 text-[12px] font-medium text-white transition-colors hover:bg-black">
