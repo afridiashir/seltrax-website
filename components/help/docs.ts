@@ -14,6 +14,8 @@ export type Block =
     /* An input where the reader types their store address and copies the
        resulting `https://<address><path>` link. */
     | { type: "feedlink"; path: string }
+    /* A YouTube video, by its id (the part after /embed/). */
+    | { type: "video"; id: string; title: string }
 
 export type Article = {
     slug: string
@@ -264,6 +266,7 @@ export const articles: Article[] = [
         minutes: 8,
         body: [
             { type: "p", text: "TikTok keeps two things separate, and product ads need both. The TikTok Pixel tells TikTok what shoppers do on your store — viewing a product, adding to cart, buying. The product catalog holds your products inside TikTok, so ads can show the exact items a shopper looked at." },
+            { type: "video", id: "ZEhTszUv_Vc", title: "How to Integrate TikTok Pixel with Seltrax Ecommerce Website" },
             { type: "h2", text: "Before you start" },
             { type: "list", items: ["A TikTok Ads Manager account at ads.tiktok.com — it's free to create.", "Access to your Seltrax admin as the store owner or an admin.", "Your store address — the one your store opens on, like yourstore.seltrax.com or your own domain."] },
             { type: "note", tone: "tip", text: "Using your own domain? Check it shows Connected under Settings → Domains first. TikTok can only read your products from an address that opens your store." },

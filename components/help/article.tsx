@@ -97,6 +97,20 @@ function Render({ block }: { block: Block }) {
                     ))}
                 </ol>
             )
+        case "video":
+            return (
+                <div className="mt-5 aspect-video overflow-hidden rounded-xl border border-[#E4E6DF] bg-[#F3F4F0]">
+                    <iframe
+                        src={`https://www.youtube.com/embed/${block.id}`}
+                        title={block.title}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        className="h-full w-full border-0"
+                    />
+                </div>
+            )
         case "feedlink":
             return <FeedLink path={block.path} />
         case "note": {
