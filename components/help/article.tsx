@@ -1,12 +1,69 @@
 "use client"
 
+import * as React from "react"
 import Link from "next/link"
-import { AlertTriangle, ArrowLeft, ArrowRight, ArrowUpRight, ChevronRight, Clock, Lightbulb } from "lucide-react"
+import { AlertTriangle, ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronRight, Clock, Copy, Lightbulb } from "lucide-react"
 import { ACCENT } from "@/components/home/ui"
 import { bySlug, headingId, ordered, sectionOf, type Article, type Block } from "./docs"
 import { DocsShell } from "./shell"
 
 const DEMO_URL = "https://calendar.app.google/gBGzD46JoktRZFa78"
+
+/* Accepts "yourstore.com", "https://yourstore.com/anything" etc. and returns
+   just the host, or "" when it doesn't look like an address. */
+function parseHost(value: string) {
+    const v = value.trim().toLowerCase().replace(/^[a-z]+:\/\//, "").split(/[/?#]/)[0]
+    return /^[a-z0-9.-]+\.[a-z]{2,}$/.test(v) ? v : ""
+}
+
+function FeedLink({ path }: { path: string }) {
+    const [value, setValue] = React.useState("")
+    const [copied, setCopied] = React.useState(false)
+    const host = parseHost(value)
+    const link = `https://${host || "yourstore.com"}${path}`
+    const hint = copied
+        ? "Copied"
+        : host
+          ? "This is your feed link."
+          : value.trim()
+            ? "Type the address only, like yourstore.com."
+            : "Example shown until you type your address."
+
+    const copy = async () => {
+        try {
+            await navigator.clipboard.writeText(link)
+            setCopied(true)
+            window.setTimeout(() => setCopied(false), 2000)
+        } catch {
+            setCopied(false)
+        }
+    }
+
+    return (
+        <div className="mt-5 rounded-xl border border-[#E4E6DF] bg-[#F6F7F3] p-4">
+            <label htmlFor="feed-address" className="text-[12.5px] font-medium">Your store address</label>
+            <input
+                id="feed-address"
+                type="text"
+                inputMode="url"
+                autoComplete="off"
+                spellCheck={false}
+                value={value}
+                onChange={(e) => { setValue(e.target.value); setCopied(false) }}
+                placeholder="yourstore.com or yourstore.seltrax.com"
+                className="mt-2 w-full rounded-lg border border-[#D9DCD3] bg-white px-3 py-2 text-[13.5px] outline-none focus:border-[#171717]"
+            />
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+                <code className="min-w-0 flex-1 basis-[240px] break-all rounded-lg bg-white px-3 py-2 text-[12.5px] text-[#171717] ring-1 ring-[#E4E6DF]">{link}</code>
+                <button type="button" onClick={copy} className="inline-flex items-center gap-1.5 rounded-full bg-[#171717] px-3.5 py-2 text-[12px] font-medium text-white hover:bg-black">
+                    {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                    {copied ? "Copied" : "Copy link"}
+                </button>
+            </div>
+            <p className="mt-2 text-[11.5px] text-[#8A8E84]" aria-live="polite">{hint}</p>
+        </div>
+    )
+}
 
 function Render({ block }: { block: Block }) {
     switch (block.type) {
@@ -40,6 +97,8 @@ function Render({ block }: { block: Block }) {
                     ))}
                 </ol>
             )
+        case "feedlink":
+            return <FeedLink path={block.path} />
         case "note": {
             const tip = block.tone === "tip"
             const Icon = tip ? Lightbulb : AlertTriangle

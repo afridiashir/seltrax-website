@@ -11,6 +11,9 @@ export type Block =
     | { type: "steps"; items: string[] }
     | { type: "list"; items: string[] }
     | { type: "note"; tone: "tip" | "warn"; text: string }
+    /* An input where the reader types their store address and copies the
+       resulting `https://<address><path>` link. */
+    | { type: "feedlink"; path: string }
 
 export type Article = {
     slug: string
@@ -273,7 +276,8 @@ export const articles: Article[] = [
             { type: "note", tone: "warn", text: "Ad blockers and privacy browsers block the pixel. Test in a normal window with them turned off." },
             { type: "h2", text: "Part 2: Add your products to a TikTok catalog" },
             { type: "p", text: "The pixel reports what shoppers do but never uploads products. For that, you give TikTok your store's product feed link. TikTok reads it on a schedule, so new products, prices and stock reach TikTok on their own." },
-            { type: "p", text: "Every Seltrax store already has a feed — nothing to switch on. The link is your store address followed by /feeds/tiktok.xml, for example https://yourstore.com/feeds/tiktok.xml. Open it in your browser to check it: you'll see product data and a line near the top such as \"42 products; 3 skipped for a missing title, image or price\"." },
+            { type: "p", text: "Every Seltrax store already has a feed — nothing to switch on. The link is your store address followed by /feeds/tiktok.xml, for example https://yourstore.com/feeds/tiktok.xml. Open it in your browser to check it: you'll see product data and a line near the top such as \"42 products; 3 skipped for a missing title, image or price\". Type your store address below to get your link." },
+            { type: "feedlink", path: "/feeds/tiktok.xml" },
             { type: "steps", items: ["In TikTok Ads Manager, open Assets → Catalogs (or Tools → Catalogs), click Create catalog and choose E-commerce.", "Name it, choose your target country or region, and set the currency to your store's currency, for example PKR. Click Create.", "Open the catalog, choose Add products, then Data feed (it may be called Scheduled feed).", "Paste your feed link, set the update schedule to Daily, and leave username and password empty — your feed is public, like your store.", "Click Upload or Confirm. The first import takes from a few minutes to an hour.", "In the catalog, open Event sources (it may sit under Catalog settings), click Connect, choose the pixel from Part 1 and save."] },
             { type: "note", tone: "warn", text: "Feed prices are in your store's currency. A catalog set to a different currency causes import errors." },
             { type: "p", text: "There's nothing to map in the last step: Seltrax uses the same product IDs in pixel events and in the feed, so TikTok matches them automatically. Then create a Catalog Sales or Product Shopping campaign in TikTok Ads Manager and choose this catalog." },
