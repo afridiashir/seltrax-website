@@ -74,9 +74,9 @@ export function Mobile() {
                     </div>
                     <div className={`absolute bottom-[14%] right-[7%] hidden rounded-xl bg-white p-2.5 sm:block lg:right-[10%] lg:p-3 ${shadow}`}>
                         <div className="flex items-center gap-2">
-                            <Face src="/landing/avatars/a5.jpg" size={22} alt="Ayesha Shahbaz" />
+                            <Face src="/landing/avatars/a5.jpg" size={22} alt="Hira Malik" />
                             <div className="text-[9px] leading-tight lg:text-[11px]">
-                                <p className="font-semibold">Ayesha Shahbaz</p>
+                                <p className="font-semibold">Hira Malik</p>
                                 <p className="text-[#8A8E84]">Order delivered</p>
                             </div>
                             <span className="ml-2 inline-flex items-center gap-0.5 text-[11px] font-semibold lg:text-[13px]">

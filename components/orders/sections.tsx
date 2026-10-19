@@ -130,7 +130,7 @@ type Order = {
 }
 
 const seed: Order[] = [
-    { id: "1042", customer: "Ayesha Shahbaz", phone: "0321 •••• 543", city: "Lahore", items: "Cotton Kurta — Navy · M", amount: 2450, stage: "New", placed: "10:42", repeat: 3, refusals: 0, history: [{ t: "10:42", label: "Order placed · COD" }] },
+    { id: "1042", customer: "Hira Malik", phone: "0321 •••• 543", city: "Lahore", items: "Cotton Kurta — Navy · M", amount: 2450, stage: "New", placed: "10:42", repeat: 3, refusals: 0, history: [{ t: "10:42", label: "Order placed · COD" }] },
     { id: "1041", customer: "Usman Tariq", phone: "0300 •••• 118", city: "Multan", items: "Leather Wallet × 2", amount: 5700, stage: "New", placed: "10:15", tag: "High value", repeat: 0, refusals: 0, history: [{ t: "10:15", label: "Order placed · COD" }] },
     { id: "1040", customer: "Omar Farooq", phone: "0333 •••• 902", city: "Peshawar", items: "Lawn 3-piece — Sage", amount: 1500, stage: "New", placed: "09:58", tag: "Flagged", repeat: 1, refusals: 2, history: [{ t: "09:58", label: "Order placed · COD" }, { t: "09:58", label: "Flagged: 2 previous refusals" }] },
     { id: "1039", customer: "Sana Malik", phone: "0345 •••• 207", city: "Lahore", items: "Silk Dupatta — Rose", amount: 1800, stage: "Confirmed", placed: "Yesterday", repeat: 2, refusals: 0, history: [{ t: "Yest. 18:10", label: "Order placed · COD" }, { t: "Yest. 18:31", label: "Confirmed by customer (WhatsApp)" }] },

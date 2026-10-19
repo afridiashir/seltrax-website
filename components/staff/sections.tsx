@@ -139,7 +139,7 @@ const people = [
     { name: "Hamza Iqbal", photo: "/landing/avatars/a2.jpg" },
     { name: "Sana Malik", photo: "/landing/avatars/a3.jpg" },
     { name: "Bilal Ahmed", photo: "/landing/avatars/a4.jpg" },
-    { name: "Ayesha Shahbaz", photo: "/landing/avatars/a5.jpg" },
+    { name: "Hira Malik", photo: "/landing/avatars/a5.jpg" },
     { name: "Zainab Raza", photo: "/landing/avatars/a1.jpg" },
 ]
 const seedTeam: Member[] = [

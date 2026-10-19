@@ -43,7 +43,7 @@ const couriers = ["TCS", "Leopards", "M&P"] as const
 /* ---- Order lifecycle ------------------------------------------------------ */
 
 const stages = [
-    { key: "placed", label: "Order placed", icon: Smartphone, status: "New", note: "Ayesha ordered a Cotton Kurta — Rs 2,450, cash on delivery. Phone number captured at checkout.", pill: "COD · Rs 2,450" },
+    { key: "placed", label: "Order placed", icon: Smartphone, status: "New", note: "Hira ordered a Cotton Kurta — Rs 2,450, cash on delivery. Phone number captured at checkout.", pill: "COD · Rs 2,450" },
     { key: "confirmed", label: "Confirmed", icon: Phone, status: "Confirmed", note: "Order confirmed with the customer before anything ships — the single biggest cut to fake orders.", pill: "Confirmed by phone" },
     { key: "dispatched", label: "Dispatched", icon: Truck, status: "Dispatched", note: "Booked with Leopards in one click. The tracking number is saved on the order and sent to the customer.", pill: "Leopards · #004518-7742" },
     { key: "delivered", label: "Delivered", icon: PackageCheck, status: "Delivered", note: "Delivered and Rs 2,450 collected at the door. The order flips to Delivered from the courier's update.", pill: "Rs 2,450 collected" },
@@ -159,7 +159,7 @@ function Lifecycle() {
                         <div className="flex items-center gap-2.5">
                             <Flag code="pk" size={26} />
                             <div className="text-[10px] leading-tight lg:text-[12px]">
-                                <p className="font-semibold">Order-0032 · Ayesha Shahbaz</p>
+                                <p className="font-semibold">Order-0032 · Hira Malik</p>
                                 <p className="text-[#8A8E84]">Cotton Kurta — Navy · Lahore</p>
                             </div>
                         </div>
@@ -391,7 +391,7 @@ const orders: Row[] = [
     { id: "0029", customer: "Sana Malik", city: "Lahore", courier: "Leopards", amount: 1800, stage: "Delivered" },
     { id: "0030", customer: "Bilal Ahmed", city: "Islamabad", courier: "M&P", amount: 2950, stage: "Dispatched" },
     { id: "0031", customer: "Mariam Khan", city: "Faisalabad", courier: "TCS", amount: 2450, stage: "Returned" },
-    { id: "0032", customer: "Ayesha Shahbaz", city: "Lahore", courier: "Leopards", amount: 2450, stage: "Delivered" },
+    { id: "0032", customer: "Hira Malik", city: "Lahore", courier: "Leopards", amount: 2450, stage: "Delivered" },
     { id: "0033", customer: "Usman Tariq", city: "Multan", courier: "M&P", amount: 5700, stage: "Delivered" },
     { id: "0034", customer: "Zainab Raza", city: "Karachi", courier: "TCS", amount: 3200, stage: "Remitted" },
     { id: "0035", customer: "Omar Farooq", city: "Peshawar", courier: "Leopards", amount: 1500, stage: "Dispatched" },

@@ -46,7 +46,7 @@ type Mode = "required" | "optional" | "hidden"
 type Field = { key: string; label: string; placeholder: string; mode: Mode; locked?: boolean; seconds: number; kind?: "tel" | "email" | "select" | "textarea" | "text" }
 
 const defaults: Field[] = [
-    { key: "name", label: "Full name", placeholder: "Ayesha Shahbaz", mode: "required", locked: true, seconds: 5, kind: "text" },
+    { key: "name", label: "Full name", placeholder: "Hira Malik", mode: "required", locked: true, seconds: 5, kind: "text" },
     { key: "phone", label: "Phone number", placeholder: "03XX XXXXXXX", mode: "required", locked: true, seconds: 6, kind: "tel" },
     { key: "city", label: "City", placeholder: "Lahore", mode: "required", seconds: 3, kind: "select" },
     { key: "address", label: "Address", placeholder: "House, street, area", mode: "required", seconds: 9, kind: "text" },
