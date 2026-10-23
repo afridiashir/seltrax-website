@@ -7,7 +7,7 @@ export default defineCliConfig({
     },
     deployment: {
         autoUpdates: true,
-        // After the first `npm run deploy`, paste the appId it prints here so
-        // later deploys go to the same studio URL without asking.
+        // seltrax.sanity.studio
+        appId: "fakdm04vgo1suukj8ninbyoo",
     },
 })
