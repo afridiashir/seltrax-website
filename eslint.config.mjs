@@ -12,8 +12,6 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Sanity Studio is its own app with its own lint setup.
-    "studio/**",
   ]),
 ]);
 
