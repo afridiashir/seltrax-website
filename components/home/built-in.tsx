@@ -31,7 +31,7 @@ const features = [
 
 /* Figures come from the existing site copy (components/stats.tsx, landing/cta.tsx). */
 const stats = [
-    { value: "Rs 1,349", label: "per month, everything included" },
+    { value: "Rs 1,999", label: "per month, everything included" },
     { value: "2x", label: "faster than Shopify & WooCommerce" },
     { value: "70K", label: "PKR saved on setup costs" },
 ]

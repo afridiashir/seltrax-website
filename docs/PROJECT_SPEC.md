@@ -257,7 +257,7 @@ Migration: `20251231090235_emails`. The table stores **waitlist sign-ups**, not 
 |---|---|
 | Default metadata | `app/layout.tsx`: title, description, keywords, OpenGraph, Twitter `summary_large_image`, `robots: index, follow`, `metadataBase` |
 | Per-page metadata | Every `page.tsx` sets its title, description and `alternates.canonical` |
-| Structured data | Organization + SoftwareApplication (Offer: 1349 PKR / MONTH) in the root layout; FAQPage on the homepage FAQ |
+| Structured data | Organization + SoftwareApplication (Offer: 1999 PKR / MONTH) in the root layout; FAQPage on the homepage FAQ |
 | Sitemap | `app/sitemap.ts`: 23 static routes plus every integration and help article; priorities 0.5–1.0 |
 | Robots | Allow `/`, disallow `/api/`, sitemap reference |
 | Social images | `opengraph-image.tsx` generates a 1200×630 image with `next/og`; `twitter-image.tsx` re-exports it |
@@ -328,7 +328,7 @@ The site uses a light theme only.
 | Add a help article | Append to `articles` in `components/help/docs.ts` **and** list its slug in a `sections` entry. Check the menu paths against the live dashboard first. |
 | Add a store design | Append to `designs` in `components/designs/data.ts` with a category slug, a screenshot under `public/designs/` and an optional live `preview` URL. |
 | Publish a blog post / case study | Append a `ListingEntry` to the data file. Set `href` only once a detail page exists (none exist yet). Case studies must be real and approved by the seller. |
-| Change pricing | Update `MONTHLY` / `YEARLY_PER_MONTH` in `components/pricing/sections.tsx` **and** every hard-coded "Rs 1,349" (see §10). |
+| Change pricing | Update `MONTHLY` / `YEARLY_PER_MONTH` in `components/pricing/sections.tsx` **and** every hard-coded "Rs 1,999" (see §10). |
 | Change nav | Edit `NAV` in `components/home/nav-data.ts`. |
 | Add a page | Create `app/<route>/page.tsx` (feature pages go in `app/(products)/`) with `metadata` + `alternates.canonical`, put sections in `components/<feature>/sections.tsx`, end with `<CTAFooter />`, and add the route to `app/sitemap.ts` and, if needed, to `NAV`. |
 
@@ -345,7 +345,7 @@ The site uses a light theme only.
 6. **Marketing claims need backing:** "about 2x faster than Shopify" (nav), "most sellers launch in under an hour", and the comparison table scores.
 
 ### Inconsistencies
-7. **Price messaging conflicts.** `/pricing` says Rs 1,999 monthly or Rs 1,349 billed yearly. The homepage FAQ ("Rs 1,349/month, flat"), CTA footer, nav CTA card, about page, reviews CTA, root metadata description, OG image and SoftwareApplication JSON-LD all state Rs 1,349/month with no yearly-billing qualifier. The `/compare` calculator uses 1,349 × 12.
+7. **Price messaging.** `/pricing` says Rs 1,999 monthly or Rs 1,349 billed yearly. Everywhere else (homepage, nav CTA, about, reviews, metadata, OG image, SoftwareApplication JSON-LD, calculators) states the monthly Rs 1,999/month.
 8. **"Start Free Trial"** (homepage hero) implies a trial; everywhere else says "No credit card needed to start" with no trial terms.
 9. **Stale comments** reference `components/landing/*`, which no longer exists, and `lib/config.ts` says `/api/health` is "rendered on /health", but `/health` now redirects to UptimeRobot.
 

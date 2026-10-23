@@ -59,7 +59,7 @@ const reviews: Review[] = [
         rating: 5,
     },
     {
-        text: "Rs 1,349 a month for everything is the whole pitch. No surprise app bills at the end of the month, no dollar pricing to worry about.",
+        text: "Rs 1,999 a month for everything is the whole pitch. No surprise app bills at the end of the month, no dollar pricing to worry about.",
         name: "Seller name",
         role: "Owner, Store name",
         topics: ["price"],
@@ -227,7 +227,7 @@ export function ReviewsPage() {
                     <div className="flex flex-col items-start justify-between gap-4 rounded-2xl p-6 text-white lg:p-8" style={{ background: ACCENT }}>
                         <div>
                             <p className="text-[18px] font-semibold tracking-[-0.02em] lg:text-[22px]">Write your own success story</p>
-                            <p className="mt-1 text-[12px] leading-relaxed text-white/80 lg:text-[14px]">Launch today for Rs 1,349/month, everything included.</p>
+                            <p className="mt-1 text-[12px] leading-relaxed text-white/80 lg:text-[14px]">Launch today for Rs 1,999/month, everything included.</p>
                         </div>
                         <Link href={REGISTER_URL} className="inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-[12px] font-medium text-[#171717] hover:bg-[#F3F4F0]">
                             Start selling <ArrowUpRight className="h-3.5 w-3.5" />

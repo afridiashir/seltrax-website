@@ -368,7 +368,7 @@ export function Calculator() {
                             <Stat label="Your monthly revenue" value={fmt(revenue)} />
                             <Stat label="Lost for every extra second" value={fmt(perSecond)} sub="per month" />
                             <Stat label="Back in your pocket on Seltrax" value={fmt(recovered)} sub="per month, from speed alone" hot />
-                            <Stat label="That's the subscription paid" value={`${Math.max(1, Math.round(recovered / 1349))}×`} sub="over — Rs 1,349/month, everything included" />
+                            <Stat label="That's the subscription paid" value={`${Math.max(1, Math.round(recovered / 1999))}×`} sub="over — Rs 1,999/month, everything included" />
                         </div>
                     </div>
                 </Reveal>

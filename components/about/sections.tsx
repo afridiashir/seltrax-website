@@ -134,7 +134,7 @@ export function Story() {
 /* ---- Mission + facts ---------------------------------------------------- */
 
 const facts = [
-    { n: "Rs 1,349", l: "a month, flat — everything included" },
+    { n: "Rs 1,999", l: "a month, flat — everything included" },
     { n: "0", l: "plugins or apps to install" },
     { n: "3", l: "couriers built in: TCS, Leopards, M&P" },
     { n: "∞", l: "staff accounts at no extra cost" },
@@ -170,7 +170,7 @@ export function Mission() {
 
 const values = [
     { icon: MapPin, title: "Built for here", desc: "Cash on delivery, local couriers, Urdu and English, rupee pricing. We design for Pakistan first, not as a translation." },
-    { icon: Scale, title: "One honest price", desc: "Rs 1,349 a month covers everything. No per-seat fees, no app store, no transaction surprises." },
+    { icon: Scale, title: "One honest price", desc: "Rs 1,999 a month covers everything. No per-seat fees, no app store, no transaction surprises." },
     { icon: Gauge, title: "Fast is a feature", desc: "Most of your customers are on a phone and mobile data. Every decision we make is checked against speed." },
     { icon: Sparkles, title: "Nothing to bolt on", desc: "If sellers keep asking for a plugin, it belongs in the platform. We'd rather build it once for everyone." },
     { icon: Smartphone, title: "Run it from your pocket", desc: "Sellers aren't at a desk all day. The whole business — orders, dispatch, sales — works from the mobile app." },

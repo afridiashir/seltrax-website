@@ -682,7 +682,7 @@ const faqs = [
     { q: "Why is my delivered revenue lower than my sales?", a: "Because some COD parcels come back. Sales counts orders placed; delivered revenue counts orders that were handed over and paid for. The gap is your return rate — and the city and courier breakdowns show where it comes from." },
     { q: "Can I hide revenue from my staff?", a: "Yes. Staff permissions let you give someone access to orders without access to analytics or totals." },
     { q: "Can I export the data?", a: "Every report exports to CSV for the date range you've selected." },
-    { q: "Are analytics on every plan?", a: "Yes — the full dashboard and reports are part of the Rs 1,349/month plan. There's no separate analytics tier or app." },
+    { q: "Are analytics on every plan?", a: "Yes — the full dashboard and reports are part of the Rs 1,999/month plan. There's no separate analytics tier or app." },
 ]
 
 export function AnalyticsFAQ() {

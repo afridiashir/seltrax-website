@@ -78,7 +78,7 @@ export const NAV: NavItem[] = [
                 ],
             },
         ],
-        cta: { title: "Your store could be live tonight", desc: "Rs 1,349/month, everything included, cancel anytime.", href: REGISTER_URL, label: "Create your store" },
+        cta: { title: "Your store could be live tonight", desc: "Rs 1,999/month, everything included, cancel anytime.", href: REGISTER_URL, label: "Create your store" },
     },
     {
         label: "Company",

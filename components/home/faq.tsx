@@ -9,7 +9,7 @@ import { ACCENT, ACCENT_SOFT, Container, Reveal, Serif, h2Class } from "./ui"
 const faqs = [
     {
         q: "How much does Seltrax cost?",
-        a: "Rs 1,349/month, flat. That covers your storefront, themes, payments, analytics, hosting, and security. No dollar-pegged plans, no app subscriptions, no transaction fee surprises. The price you see is the price you pay.",
+        a: "Rs 1,999/month, flat. That covers your storefront, themes, payments, analytics, hosting, and security. No dollar-pegged plans, no app subscriptions, no transaction fee surprises. The price you see is the price you pay.",
     },
     {
         q: "Is Seltrax really faster than Shopify and WooCommerce?",
@@ -21,7 +21,7 @@ const faqs = [
     },
     {
         q: "Do I need hosting or plugins like WooCommerce?",
-        a: "No. Hosting, security and updates are included in your flat Rs 1,349/month plan. Nothing extra to install or maintain.",
+        a: "No. Hosting, security and updates are included in your flat Rs 1,999/month plan. Nothing extra to install or maintain.",
     },
     {
         q: "Can I move my store from Shopify or WooCommerce?",

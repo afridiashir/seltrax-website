@@ -34,7 +34,7 @@ const quotes = [
         initials: "SN",
     },
     {
-        text: "Rs 1,349 a month for everything is the whole pitch. No surprise app bills at the end of the month, no dollar pricing to worry about.",
+        text: "Rs 1,999 a month for everything is the whole pitch. No surprise app bills at the end of the month, no dollar pricing to worry about.",
         name: "Seller name",
         role: "Owner, Store name",
         initials: "SN",

@@ -22,7 +22,7 @@ const siteUrl = "https://seltrax.com";
 const title =
   "Seltrax: Online Store Builder for Pakistan | Themes, COD & Couriers Built In";
 const description =
-  "Build your online store in Pakistan with themes, cash-on-delivery checkout, courier dispatch and analytics built in. No plugins, no code, Rs 1,349/month flat.";
+  "Build your online store in Pakistan with themes, cash-on-delivery checkout, courier dispatch and analytics built in. No plugins, no code, Rs 1,999/month flat.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -81,11 +81,11 @@ const organizationSchema = {
       description,
       offers: {
         "@type": "Offer",
-        price: "1349",
+        price: "1999",
         priceCurrency: "PKR",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: "1349",
+          price: "1999",
           priceCurrency: "PKR",
           unitText: "MONTH",
         },

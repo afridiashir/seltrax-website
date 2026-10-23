@@ -491,7 +491,7 @@ export function CostAfter() {
     const [apps, setApps] = React.useState(5)
     const [perApp, setPerApp] = React.useState(2500)
     const current = planCost + apps * perApp
-    const saved = Math.max(0, current - 1349)
+    const saved = Math.max(0, current - 1999)
 
     return (
         <Container>
@@ -538,7 +538,7 @@ export function CostAfter() {
                             </div>
                             <div className="rounded-xl p-4 text-white lg:p-5" style={{ background: ACCENT }}>
                                 <p className="text-[10px] text-white/70 lg:text-[11px]">On Seltrax</p>
-                                <p className="mt-1 text-[24px] font-semibold tracking-[-0.02em] lg:text-[30px]">Rs 1,349</p>
+                                <p className="mt-1 text-[24px] font-semibold tracking-[-0.02em] lg:text-[30px]">Rs 1,999</p>
                                 <p className="text-[10px] text-white/70">per month, everything included</p>
                             </div>
                             <div className="rounded-xl bg-[#171717] p-4 text-white sm:col-span-2 lg:p-5">

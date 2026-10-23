@@ -22,7 +22,7 @@ const GROUP_ORDER: PageGroup[] = [
 
 const FACTS = [
     "Seltrax is built for sellers in Pakistan: cash on delivery is the primary payment method, not an afterthought.",
-    "Pricing is a single flat plan at Rs 1,349 per month, billed in Pakistani rupees. There are no per-seat fees, no app store and no transaction fees.",
+    "Pricing is a single flat plan at Rs 1,999 per month, billed in Pakistani rupees. There are no per-seat fees, no app store and no transaction fees.",
     "Hosting, themes, the page builder, analytics, staff accounts and courier integrations are included in that price — there is nothing to install.",
     "TCS, Leopards and M&P courier booking, labels and tracking are built into the order workflow.",
     "Staff accounts are unlimited at no extra cost.",

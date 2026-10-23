@@ -74,7 +74,7 @@ export function StaffHero() {
                     <motion.p {...float(0.1)} className="mx-auto mt-4 max-w-[580px] text-[12px] leading-relaxed text-[#3A3D37] lg:text-[15px]">
                         Packers, support, a manager, your marketing freelancer — give every person their own login with exactly
                         the access they need. No per-seat pricing, no staff limit, no upgrade to add the fifth person. It&apos;s all
-                        inside the same Rs 1,349 a month.
+                        inside the same Rs 1,999 a month.
                     </motion.p>
                     <motion.div {...float(0.15)} className="mt-6 flex flex-wrap items-center justify-center gap-2">
                         <Link href={REGISTER_URL} className="inline-flex items-center gap-1 rounded-full bg-[#171717] px-5 py-2.5 text-[12px] font-medium text-white transition-colors hover:bg-black lg:text-[14px]">
@@ -274,7 +274,7 @@ export function TeamBuilder() {
                                             Rs 0
                                         </motion.p>
                                     </AnimatePresence>
-                                    <p className="text-[9.5px] text-white/70">Your plan stays Rs 1,349/month — for {seats} people or {seats * 10}.</p>
+                                    <p className="text-[9.5px] text-white/70">Your plan stays Rs 1,999/month — for {seats} people or {seats * 10}.</p>
                                 </div>
                             </div>
                         </div>
@@ -417,7 +417,7 @@ export function CostCompare() {
                                         Rs {yearly.toLocaleString()}
                                     </motion.p>
                                 </AnimatePresence>
-                                <p className="text-[10px] text-white/60">That&apos;s {Math.max(1, Math.round(yearly / 1349))} months of your whole Seltrax plan.</p>
+                                <p className="text-[10px] text-white/60">That&apos;s {Math.max(1, Math.round(yearly / 1999))} months of your whole Seltrax plan.</p>
                             </div>
                         </div>
                     </div>
@@ -580,7 +580,7 @@ export function StaffDetails() {
 
 const sheet = [
     ["Staff accounts", "Unlimited"],
-    ["Cost per staff account", "Rs 0 — included in Rs 1,349/month"],
+    ["Cost per staff account", "Rs 0 — included in Rs 1,999/month"],
     ["Role presets", "Manager · Packer · Support · Marketing"],
     ["Custom roles", "Yes, saved for reuse"],
     ["Permission areas", "9"],
@@ -679,7 +679,7 @@ export function StaffComparison() {
 }
 
 const faqs = [
-    { q: "Is there really no limit on staff accounts?", a: "No limit, and no charge. Add two people or twenty — the plan stays Rs 1,349 a month." },
+    { q: "Is there really no limit on staff accounts?", a: "No limit, and no charge. Add two people or twenty — the plan stays Rs 1,999 a month." },
     { q: "Can a staff member see my sales and revenue?", a: "Only if you give them access to Analytics or Cash. Packers and support staff can work with orders all day without ever seeing a total." },
     { q: "What happens when someone leaves?", a: "Remove them from Staff and they're signed out of the dashboard and the mobile app immediately. Their past actions stay in the activity log." },
     { q: "Can I see who changed an order?", a: "Yes. Every change on an order — confirmation, edit, dispatch, cancellation — shows the staff member who made it, and the activity log lets you filter by person." },

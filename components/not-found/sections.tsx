@@ -26,7 +26,7 @@ const float = (delay: number) => ({
    is no more useful than the 404 itself. */
 const destinations = [
     { icon: House, title: "Home", desc: "Everything Seltrax does, on one page.", href: "/" },
-    { icon: Wallet, title: "Pricing", desc: "One flat plan, Rs 1,349 a month.", href: "/pricing" },
+    { icon: Wallet, title: "Pricing", desc: "One flat plan, Rs 1,999 a month.", href: "/pricing" },
     { icon: Palette, title: "Designs", desc: "Ready-made store designs by category.", href: "/designs" },
     { icon: LifeBuoy, title: "Help center", desc: "Guides for setting up and running a store.", href: "/help" },
     { icon: PlugZap, title: "Integrations", desc: "Couriers, pixels, analytics and WhatsApp.", href: "/integrations" },

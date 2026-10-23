@@ -55,7 +55,7 @@ export function CTAFooter() {
                     </h2>
                     <p className="mx-auto mt-3 max-w-[340px] text-[10.5px] leading-relaxed text-[#3A3D37] lg:max-w-[480px] lg:text-[14px]">
                         Sign up, pick a theme, add your products — most sellers launch in under an hour.
-                        Rs 1,349/month, everything included, cancel anytime.
+                        Rs 1,999/month, everything included, cancel anytime.
                     </p>
                     <Link
                         href={REGISTER_URL}

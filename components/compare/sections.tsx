@@ -60,7 +60,7 @@ const summaries: Record<Rival, { lead: string; points: { title: string; us: stri
             { title: "Maintenance", us: "Nothing to update, back up or patch.", them: "Plugin, theme and WordPress updates — and the conflicts they cause." },
             { title: "Speed", us: "Fast out of the box on every store.", them: "Depends on your host, theme and caching plugins." },
             { title: "Cash on delivery", us: "COD-first checkout with confirmation and remittance tracking.", them: "Basic COD built in; the rest comes from plugins." },
-            { title: "Real cost", us: "Rs 1,349/month, everything included.", them: "Free core, plus hosting, premium theme and paid plugins." },
+            { title: "Real cost", us: "Rs 1,999/month, everything included.", them: "Free core, plus hosting, premium theme and paid plugins." },
         ],
     },
 }
@@ -293,7 +293,7 @@ export function TwelveMonthCost() {
     const v = inputs[which]
     const set = (k: keyof CostInputs, n: number) => setInputs((x) => ({ ...x, [which]: { ...x[which], [k]: n } }))
     const theirs = (v.plan + v.apps * v.appCost + v.extra) * 12
-    const ours = 1349 * 12
+    const ours = 1999 * 12
     const diff = Math.max(0, theirs - ours)
     const max = Math.max(theirs, ours)
 

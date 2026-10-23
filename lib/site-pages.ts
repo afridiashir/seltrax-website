@@ -46,7 +46,7 @@ export const sitePages: SitePage[] = [
     {
         path: "/pricing",
         title: "Pricing",
-        summary: "One flat plan at Rs 1,349/month — everything included, billed monthly or yearly, cancel anytime.",
+        summary: "One flat plan at Rs 1,999/month — everything included, billed monthly or yearly, cancel anytime.",
         group: "Start here",
         priority: 0.9,
         changeFrequency: "monthly",

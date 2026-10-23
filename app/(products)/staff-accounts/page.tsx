@@ -5,7 +5,7 @@ import { CTAFooter } from "@/components/home/cta-footer";
 export const metadata: Metadata = {
   title: "Staff Accounts — unlimited, and free | Seltrax",
   description:
-    "Add your whole team at no extra cost. Unlimited staff accounts with role presets, per-area permissions, hidden revenue, an activity log and instant access removal — all inside Rs 1,349/month.",
+    "Add your whole team at no extra cost. Unlimited staff accounts with role presets, per-area permissions, hidden revenue, an activity log and instant access removal — all inside Rs 1,999/month.",
   alternates: { canonical: "/staff-accounts" },
 };
 

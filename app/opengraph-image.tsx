@@ -68,7 +68,7 @@ export default function OpengraphImage() {
             fontWeight: 600,
           }}
         >
-          Rs 1,349/mo · everything included
+          Rs 1,999/mo · everything included
         </div>
       </div>
     ),
