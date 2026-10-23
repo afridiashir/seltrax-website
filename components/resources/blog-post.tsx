@@ -61,6 +61,38 @@ const components: PortableTextComponents = {
                     {value.caption && <figcaption className="mt-2 text-center text-[12px] text-[#8A8E84]">{value.caption}</figcaption>}
                 </figure>
             ) : null,
+        /* From @sanity/table in the Studio; the first row is the header. */
+        table: ({ value }) => {
+            const rows: { _key: string; cells: string[] }[] = value?.rows ?? []
+            if (!rows.length) return null
+            const [head, ...body] = rows
+            return (
+                <div className="mt-6 overflow-x-auto rounded-xl border border-[#E4E6DF]">
+                    <table className="w-full min-w-[480px] border-collapse text-left text-[12.5px] lg:text-[14px]">
+                        <thead className="bg-[#F6F7F3]">
+                            <tr>
+                                {head.cells.map((c, i) => (
+                                    <th key={i} scope="col" className="border-b border-[#E4E6DF] px-4 py-3 font-semibold">{c}</th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {body.map((r) => (
+                                <tr key={r._key} className="border-t border-[#EEF0EA] first:border-t-0">
+                                    {r.cells.map((c, i) =>
+                                        i === 0 ? (
+                                            <th key={i} scope="row" className="px-4 py-3 font-medium text-[#171717]">{c}</th>
+                                        ) : (
+                                            <td key={i} className="px-4 py-3 text-[#3A3D37]">{c}</td>
+                                        ),
+                                    )}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )
+        },
     },
 }
 

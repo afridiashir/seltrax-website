@@ -1,5 +1,6 @@
 import { DocumentTextIcon } from "@sanity/icons/DocumentText"
 import { defineArrayMember, defineField, defineType } from "sanity"
+import { PasteTableInput } from "../components/PasteTableInput"
 
 /* Must match blogCategories in components/resources/blog-data.ts on the site;
    the blog filters on these keys. */
@@ -118,6 +119,7 @@ export const post = defineType({
                     options: { hotspot: true },
                     fields: [alt, defineField({ name: "caption", type: "string" })],
                 }),
+                defineArrayMember({ type: "table", title: "Table", components: { input: PasteTableInput } }),
             ],
         }),
         defineField({
