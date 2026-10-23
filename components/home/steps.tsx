@@ -16,7 +16,8 @@ const tabs = [
         icon: Package,
         n: "01",
         title: "Add Your First Product",
-        desc: "Upload photos, set your price, pick variants. Your catalog starts with a single product — no spreadsheets, no imports required.",
+        desc: "Upload photos, set your price, pick variants. Your catalog starts with a single product. No spreadsheets, no imports required.",
+        alt: "Adding a product on Seltrax: Cotton Kurta, COD price in PKR",
         hint: "Try it: switch colours, sizes and stock, then flip it live.",
         Visual: ProductStudio,
     },
@@ -25,8 +26,9 @@ const tabs = [
         icon: Paintbrush,
         n: "02",
         title: "Customize Your Store",
-        desc: "Pick a theme, choose your colours and fonts, arrange your homepage. Everything is visual — if you can fill in a form, you can design your store.",
-        hint: "Try it: change the theme, accent and font — the storefront updates live.",
+        desc: "Pick a theme, choose your colours and fonts, arrange your homepage. Everything is visual: if you can fill in a form, you can design your store.",
+        alt: "Customizing a Seltrax storefront theme and accent colour",
+        hint: "Try it: change the theme, accent and font, and the storefront updates live.",
         Visual: ThemePicker,
     },
     {
@@ -35,6 +37,7 @@ const tabs = [
         n: "03",
         title: "Start Selling",
         desc: "Hit publish and share your link. Take orders and cash-on-delivery payments from day one, and watch sales come in on your dashboard.",
+        alt: "Seltrax sales dashboard showing total sales and order count",
         hint: "Try it: hover the chart for daily figures, switch between 7 and 30 days.",
         Visual: SalesChart,
     },
@@ -135,7 +138,7 @@ export function Steps() {
                             </motion.div>
                         </AnimatePresence>
 
-                        <div onPointerEnter={() => setAuto(false)}>
+                        <div role="group" aria-label={tab.alt} onPointerEnter={() => setAuto(false)}>
                             <TiltCard inView spring={false} float={false} maxTilt={4}>
                                 <div className="relative aspect-[4/3.2] overflow-hidden rounded-2xl bg-[#C9D1D2]">
                                     <Image src="/landing/scenery.jpg" alt="" fill sizes="(max-width: 768px) 100vw, 700px" className="object-cover object-[center_60%]" />

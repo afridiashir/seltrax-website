@@ -20,9 +20,9 @@ const homeSerif = Instrument_Serif({
 });
 const siteUrl = "https://seltrax.com";
 const title =
-  "Seltrax — Launch Your Online Store in Minutes | Shopify & WooCommerce Alternative";
+  "Seltrax: Online Store Builder for Pakistan | Themes, COD & Couriers Built In";
 const description =
-  "Build your online store with Seltrax for a flat Rs 1,349/month. Themes, payments, analytics, and hosting built in — no plugins, no code, no surprise fees.";
+  "Build your online store in Pakistan with themes, cash-on-delivery checkout, courier dispatch and analytics built in. No plugins, no code, Rs 1,349/month flat.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

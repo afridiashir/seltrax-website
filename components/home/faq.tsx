@@ -9,27 +9,27 @@ import { ACCENT, ACCENT_SOFT, Container, Reveal, Serif, h2Class } from "./ui"
 const faqs = [
     {
         q: "How much does Seltrax cost?",
-        a: "Rs 1,349/month, flat. That covers your storefront, themes, payments, analytics, hosting, and security. No dollar-pegged plans, no app subscriptions, no transaction fee surprises — the price you see is the price you pay.",
+        a: "Rs 1,349/month, flat. That covers your storefront, themes, payments, analytics, hosting, and security. No dollar-pegged plans, no app subscriptions, no transaction fee surprises. The price you see is the price you pay.",
     },
     {
         q: "Is Seltrax really faster than Shopify and WooCommerce?",
-        a: "Yes. Shopify and WooCommerce stores slow down as you stack on apps and plugins. Seltrax has nothing to stack — speed is built into the platform, so your store stays fast as you grow.",
+        a: "Yes. In page-load testing against comparable Shopify and WooCommerce stores, Seltrax loads about 2x faster, because there's no plugin or app bloat weighing the page down.",
     },
     {
         q: "Do I need to know how to code?",
-        a: "No. Pick a theme, add your products, and publish. If you can fill in a form, you can launch a store on Seltrax.",
+        a: "No. Every theme, section and setting is adjustable from your dashboard. If you can fill in a form, you can design your online store.",
     },
     {
         q: "Do I need hosting or plugins like WooCommerce?",
-        a: "No. Hosting, security, backups, and updates are all handled for you. There are no servers to manage and no plugins to install, update, or fix when they conflict.",
+        a: "No. Hosting, security and updates are included in your flat Rs 1,349/month plan. Nothing extra to install or maintain.",
     },
     {
         q: "Can I move my store from Shopify or WooCommerce?",
-        a: "Yes. Bring your products, customers, and orders over with Seltrax's migration tools — most sellers switch without losing a day of sales.",
+        a: "Yes. Your products, customers, orders and existing SEO migrate across to Seltrax with no downtime.",
     },
     {
         q: "How fast can I go live?",
-        a: "Most stores launch the same day — many in under an hour. Sign up, pick a theme, add products, publish. No credit card needed to start.",
+        a: "Most sellers in Pakistan publish their first product and go live the same day they sign up.",
     },
 ]
 

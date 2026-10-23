@@ -22,7 +22,7 @@ const quotes = [
         initials: "SN",
     },
     {
-        text: "Staff accounts alone fixed a real problem for us — the packing team sees orders, the marketing team sees analytics, and nobody shares a password.",
+        text: "Staff accounts alone fixed a real problem for us. The packing team sees orders, the marketing team sees analytics, and nobody shares a password.",
         name: "Seller name",
         role: "Operations, Store name",
         initials: "SN",

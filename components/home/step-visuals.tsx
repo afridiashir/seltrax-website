@@ -42,7 +42,7 @@ export function ProductStudio() {
                 <div className="min-w-0 flex-1">
                     <p className="text-[9px] text-[#8A8E84] lg:text-[10px]">Product</p>
                     <p className="truncate text-[12px] font-semibold lg:text-[14px]">
-                        Cotton Kurta —{" "}
+                        Cotton Kurta ·{" "}
                         <AnimatePresence mode="wait" initial={false}>
                             <motion.span key={c.name} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.18 }} className="inline-block">
                                 {c.name}

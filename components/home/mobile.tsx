@@ -19,6 +19,10 @@ export function Mobile() {
                         <Chip icon={<BarChart3 className="h-3 w-3" />} label="Live sales, sessions & conversion" />
                         <Chip icon={<Package className="h-3 w-3" />} label="Orders and dispatch, anywhere" />
                     </div>
+                    <p className="mx-auto mt-4 max-w-[420px] text-center text-[11px] leading-relaxed text-[#6B6F66] lg:max-w-[520px] lg:text-[14px]">
+                        Check sales, confirm orders and book courier pickups from the Seltrax Android app. Manage your
+                        online store in Pakistan from anywhere.
+                    </p>
                 </Reveal>
             </Container>
 
@@ -34,7 +38,7 @@ export function Mobile() {
                         <div className="relative aspect-[9/17.5] w-full">
                             <Image
                                 src="/mobile-screenshot.jpeg"
-                                alt="Seltrax dashboard on mobile: sales, sessions, conversion and funnel"
+                                alt="Seltrax Android app showing live sales, sessions and conversion rate"
                                 fill
                                 sizes="240px"
                                 className="object-cover object-top"
@@ -64,7 +68,11 @@ export function Mobile() {
                     </div>
 
                     {/* Right floaters */}
-                    <div className="absolute right-[7%] top-[20%] hidden max-w-[210px] space-y-1.5 sm:block lg:right-[12%]">
+                    <div
+                        role="group"
+                        aria-label="WhatsApp order status update sent automatically via Seltrax"
+                        className="absolute right-[7%] top-[20%] hidden max-w-[210px] space-y-1.5 sm:block lg:right-[12%]"
+                    >
                         <div className={`w-fit rounded-xl rounded-tl-sm bg-white px-2.5 py-1.5 text-[9px] lg:text-[11px] ${shadow}`}>
                             Where is my order?
                         </div>

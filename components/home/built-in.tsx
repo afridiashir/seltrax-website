@@ -11,17 +11,20 @@ import { ACCENT, ACCENT_SOFT, Container, Reveal, Serif, h2Class, shadow } from "
 const features = [
     {
         title: "Store loads in a blink",
-        desc: "Optimised for speed in Pakistan. No plugin bloat, so your store stays fast as you grow.",
+        desc: "Optimised for speed in Pakistan. No plugin bloat, so your online store stays fast as you grow.",
+        alt: "Seltrax page load speed vs Shopify and WooCommerce",
         Visual: SpeedVisual,
     },
     {
         title: "COD-first checkout",
-        desc: "Cash on delivery, courier dispatch and tracking are built in — because that's how Pakistan buys.",
+        desc: "Cash on delivery, courier dispatch and tracking are built into every order, because that's how Pakistan buys.",
+        alt: "COD orders dispatched via TCS, Leopards and M&P",
         Visual: OrdersVisual,
     },
     {
         title: "Built-in analytics",
         desc: "Sales, visitors and best-sellers at a glance. No extra apps, no extra fees.",
+        alt: "Seltrax sales and visitor analytics dashboard",
         Visual: ChartVisual,
     },
 ]
@@ -52,7 +55,7 @@ export function BuiltIn() {
                     {features.map((f, i) => (
                         <div key={f.title}>
                             <TiltCard inView spring={false} float={false} delay={i * 0.08} maxTilt={8}>
-                                <div className="aspect-[4/3.4] overflow-hidden rounded-2xl lg:aspect-[4/3]">
+                                <div role="group" aria-label={f.alt} className="aspect-[4/3.4] overflow-hidden rounded-2xl lg:aspect-[4/3]">
                                     <f.Visual />
                                 </div>
                             </TiltCard>
@@ -74,6 +77,9 @@ export function BuiltIn() {
                         </div>
                     ))}
                 </Reveal>
+                <p className="mt-6 text-center text-[10px] text-[#8A8E84] lg:mt-8 lg:text-[12px]">
+                    Based on page-load testing against comparable Shopify and WooCommerce stores in Pakistan.
+                </p>
             </section>
         </Container>
     )
