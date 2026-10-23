@@ -1,14 +1,14 @@
 "use client"
 
 import { Newspaper, Trophy } from "lucide-react"
-import { Listing } from "./listing"
-import { blogCategories, blogPosts } from "./blog-data"
+import { Listing, type ListingEntry } from "./listing"
+import { blogCategories } from "./blog-data"
 import { caseStudies, caseStudyCategories } from "./case-studies-data"
 
 /* Client wrappers: the listing config holds icon components, which can't be
    passed from a server page, so each page's config lives here. */
 
-export function BlogListing() {
+export function BlogListing({ posts }: { posts: ListingEntry[] }) {
     return (
         <Listing
             config={{
@@ -19,7 +19,7 @@ export function BlogListing() {
                 intro: "Guides on cash on delivery, couriers, store design and growing an online brand in Pakistan — plus what's new in Seltrax.",
                 background: "/landing/bluish.jpg",
                 categories: blogCategories,
-                entries: blogPosts,
+                entries: posts,
                 noun: { one: "article", many: "articles" },
                 empty: {
                     title: "The first articles are on their way",

@@ -1,7 +1,5 @@
-import type { ListingEntry } from "./listing"
-
-/* Blog posts. Append an entry to publish a card on /blog — newest dates sort
-   first. Set `href` once the article page exists. */
+/* Blog categories. Posts themselves are written in Sanity (see /studio); the
+   keys here must match the category options in studio/schemaTypes/post.ts. */
 export const blogCategories = [
     { key: "guides", name: "Selling guides" },
     { key: "cod", name: "COD & couriers" },
@@ -9,5 +7,3 @@ export const blogCategories = [
     { key: "stores", name: "Store design" },
     { key: "updates", name: "Product updates" },
 ]
-
-export const blogPosts: ListingEntry[] = []
