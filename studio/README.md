@@ -5,14 +5,14 @@ site; the website reads them through `lib/blog.ts`.
 
 ## One-time setup
 
-1. Create a project at [sanity.io/manage](https://www.sanity.io/manage) with a
-   `production` dataset. Note its **project ID**.
-2. In this folder, copy `.env.example` to `.env` and set `SANITY_STUDIO_PROJECT_ID`.
-3. `npm install`, then `npm run dev` and open http://localhost:3333.
-4. Deploy the Studio so editors can use it from anywhere: `npm run deploy`
+1. The Sanity project is `pnhm39kc` (dataset `production`), already set in
+   `sanity.config.ts` and `sanity.cli.ts`. Manage it at
+   [sanity.io/manage](https://www.sanity.io/manage).
+2. `npm install`, then `npm run dev` and open http://localhost:3333.
+3. Deploy the Studio so editors can use it from anywhere: `npm run deploy`
    (pick a hostname such as `seltrax` → seltrax.sanity.studio). Paste the
    `appId` it prints into `deployment` in `sanity.cli.ts`.
-5. Invite editors in sanity.io/manage → Members.
+4. Invite editors in sanity.io/manage → Members.
 
 ## Website environment variables
 
