@@ -2,11 +2,12 @@ import { revalidateTag } from "next/cache";
 import { type NextRequest, NextResponse } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 
-/* Sanity webhook: refreshes cached blog pages when a post or author is
-   published, edited or deleted. Configure it in sanity.io/manage → API →
+/* Sanity webhook: refreshes cached blog pages and the homepage logo strip when
+   a post, author or the Homepage logos document is published, edited or
+   deleted. Configure it in sanity.io/manage → API →
    Webhooks with
      URL:        https://seltrax.com/api/revalidate
-     Filter:     _type in ["post", "author"]
+     Filter:     _type in ["post", "author", "trustedBrands"]
      Projection: { "tags": [_type, _type + ":" + slug.current] }
      Secret:     the same value as SANITY_REVALIDATE_SECRET */
 export async function POST(req: NextRequest) {

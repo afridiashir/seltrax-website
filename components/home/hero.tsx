@@ -9,15 +9,7 @@ import { cn } from "@/lib/utils"
 import { REGISTER_URL } from "@/lib/config"
 import { HomeNavbar } from "./navbar"
 import { Layer, TiltCard } from "./tilt-card"
-import { ACCENT, Container, Face, Serif, shadow } from "./ui"
-
-/* Same set as components/landing/trusted-brands.tsx — files are 60px tall. */
-const brands = [
-    { src: "/brands/truke.png", alt: "Truke, Seltrax customer", width: 119, height: 58 },
-    { src: "/brands/govo.png", alt: "GOVO, Seltrax customer", width: 145, height: 60 },
-    { src: "/brands/lemonade.png", alt: "Lemonade, Seltrax customer", width: 261, height: 60 },
-    { src: "/brands/uppercase.png", alt: "uppercase, Seltrax customer", width: 264, height: 60 },
-]
+import { ACCENT, Face, Serif, shadow } from "./ui"
 
 const DEMO_URL = "https://calendar.app.google/gBGzD46JoktRZFa78"
 
@@ -117,25 +109,6 @@ export function Hero() {
                     </div>
                 </div>
             </section>
-
-            <Container className="pb-4 pt-2 lg:pt-4">
-                <h2 className="text-center text-[11px] font-normal text-[#5C6058] lg:text-[13px]">
-                    Trusted by growing online stores across Pakistan
-                </h2>
-                <ul className="mx-auto mt-4 flex max-w-[960px] flex-wrap items-center justify-center gap-x-10 gap-y-4 sm:justify-between lg:mt-5">
-                    {brands.map((b) => (
-                        <li key={b.alt}>
-                            <Image
-                                src={b.src}
-                                alt={b.alt}
-                                width={b.width}
-                                height={b.height}
-                                className="h-6 w-auto opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-7 lg:h-8"
-                            />
-                        </li>
-                    ))}
-                </ul>
-            </Container>
         </>
     )
 }

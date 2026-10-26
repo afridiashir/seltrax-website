@@ -95,3 +95,10 @@
 body {
   font-family: var(--font-body);
 }
+
+/* Homepage "Trusted by" logo strip (components/home/brands.tsx). */
+@keyframes brands-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
