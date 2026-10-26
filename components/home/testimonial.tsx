@@ -1,49 +1,30 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import { ArrowLeft, ArrowRight, Quote, Star } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Container, Reveal, Serif, h2Class } from "./ui"
 
-/* PLACEHOLDER CONTENT — like components/landing/testimonials.tsx, these quotes,
-   names and stores are filler to lay the section out. Swap in real, attributable
-   seller reviews before this ships. */
+/* Store logos double as avatars; same files as the "Trusted by" strip. */
 const quotes = [
     {
-        text: "Before Seltrax we were paying for Shopify plus four apps just to run cash on delivery properly. Now it's one bill, the store loads faster, and our courier dispatch happens in one click.",
-        name: "Seller name",
-        role: "Founder, Store name",
-        initials: "SN",
+        text: "Watches are high-value COD orders, so every fake order used to hurt. Now the order, the courier booking and the tracking number all sit in one place, and dispatch takes one click instead of a back-and-forth with the courier.",
+        name: "Ahsan",
+        role: "Apna Time Watches",
+        logo: "/brands/apna-time.png",
     },
     {
-        text: "We moved our whole catalog over on a Sunday and were taking orders by Monday morning. No developer, no plugins, nothing to maintain.",
-        name: "Seller name",
-        role: "Owner, Store name",
-        initials: "SN",
+        text: "Jewellery needs to look right on a phone, and our store finally does. It loads fast even on mobile data, and we set the whole thing up ourselves without hiring a developer.",
+        name: "Mian Jawed",
+        role: "Zarqash Jewelers",
+        logo: "/brands/zarqash.png",
     },
     {
-        text: "Staff accounts alone fixed a real problem for us. The packing team sees orders, the marketing team sees analytics, and nobody shares a password.",
-        name: "Seller name",
-        role: "Operations, Store name",
-        initials: "SN",
-    },
-    {
-        text: "The store is genuinely fast on mobile data. Our bounce rate dropped the week we switched and it hasn't gone back up.",
-        name: "Seller name",
-        role: "Co-founder, Store name",
-        initials: "SN",
-    },
-    {
-        text: "Rs 1,999 a month for everything is the whole pitch. No surprise app bills at the end of the month, no dollar pricing to worry about.",
-        name: "Seller name",
-        role: "Owner, Store name",
-        initials: "SN",
-    },
-    {
-        text: "COD tracking used to be a WhatsApp thread with the courier. Now every order shows its dispatch and tracking number right on the dashboard.",
-        name: "Seller name",
-        role: "Manager, Store name",
-        initials: "SN",
+        text: "We were paying for a platform plus a stack of apps just to run cash on delivery. With Seltrax it's one bill in rupees, and our team each has their own login instead of sharing a password.",
+        name: "Mehroz",
+        role: "WristGadgets",
+        logo: "/brands/wristgadgets.png",
     },
 ]
 
@@ -118,8 +99,8 @@ export function Testimonial() {
                                         </div>
                                         <blockquote className="mt-4 flex-1 text-[12px] leading-relaxed text-[#3A3D37] lg:text-[15px]">“{q.text}”</blockquote>
                                         <figcaption className="mt-6 flex items-center gap-2.5 border-t border-[#E4E6DF] pt-4">
-                                            <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-[10px] font-semibold text-[#5C6058] ring-1 ring-[#E4E6DF]">
-                                                {q.initials}
+                                            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white p-1 ring-1 ring-[#E4E6DF] lg:h-10 lg:w-10">
+                                                <Image src={q.logo} alt="" width={40} height={40} className="h-full w-full object-contain" />
                                             </span>
                                             <div className="leading-tight">
                                                 <p className="text-[11px] font-semibold lg:text-[13px]">{q.name}</p>
@@ -132,7 +113,8 @@ export function Testimonial() {
                         </div>
                     </div>
 
-                    <div className="mt-6 flex items-center justify-between lg:mt-8">
+                    {/* Hidden when every card already fits, e.g. three quotes on desktop. */}
+                    <div className={cn("mt-6 flex items-center justify-between lg:mt-8", last === 0 && "hidden")}>
                         <div className="flex gap-1.5" role="tablist" aria-label="Reviews">
                             {Array.from({ length: last + 1 }, (_, i) => (
                                 <button
